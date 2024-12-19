@@ -1,0 +1,29 @@
+<?php
+
+add_filter('script_loader_tag', "add_module_to_tag_script", 10, 3);
+add_filter('allowed_http_origins', 'add_allowed_origins');
+
+function add_allowed_origins($origins) {
+    $origins[] = 'http://localhost:3010';
+    return $origins;
+}
+
+function add_module_to_tag_script($tag, $handle, $src){
+	$modules = [
+		'index-scripts',
+		'post-scripts',
+		'about-scripts',
+		'clients-scripts',
+		'news-scripts',
+		'programs-scripts',
+		'school-scripts',
+		'global-scripts'
+	];
+
+	if ( !in_array($handle, $modules) ) {
+		return $tag;
+	}
+
+	$tag = '<script type="module" crossorigin src="' . esc_url( $src ) . '"></script>';
+	return $tag;
+}
