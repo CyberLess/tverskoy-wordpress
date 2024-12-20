@@ -1015,99 +1015,12 @@ get_header();
 		</div>
 		<a class="section-products-slider__button ui-button ui-button_type_purple-border ui-button_size_default" href="#"><span class="ui-button__text">Посмотреть все</span></a>
 	</section>
-	<section class="section-core section-core section-events-slider" props="{}">
-		<div class="section-events-slider__wrapper wrapper">
-			<div class="section-events-slider__flex grid-flex grid-flex_wrap">
-				<div class="section-events-slider__col grid-col grid-col_left"><div class="section-events-slider__title ui-title ui-title_default ui-title_color-gray ui-title_size-default">Мероприятия</div></div>
-				<div class="section-events-slider__col grid-col grid-col_right">
-					<div class="section-events-slider__text">
-						Особняк XVIII века был бережно реконструирован и&nbsp;подарил исторические стены для&nbsp;гастрокластера TVERSKOY. Более 17 000 м² полностью посвятили еде — и&nbsp;вы можете стать частью нового
-						гастрономического мира в&nbsp;центре Москвы.
-					</div>
-				</div>
-			</div>
-			<div class="js-event-container">
-				<picture class="section-events-slider__module-photo module-photo event-item-preview js-event-preview"></picture>
-				<div class="section-events-slider__slider js-slider-default">
-					<div class="section-events-slider__slider-wrapper swiper-wrapper">
-						<div class="section-events-slider__slide swiper-slide">
-							<a class="section-events-slider__item item-event grid-flex grid-flex grid-flex_wrap js-event-item" href="#">
-								<span class="item-event__col item-event__col_left grid-col grid-col_left">
-									<div class="item-event__date ui-title ui-title_default ui-title_color-gray ui-title_size-middle">12 января<span class="ui-title__date-part"> / 14:45</span></div>
-									<picture class="item-event__image module-photo"><img class="object-fit-cover js-event-item-image" src="<?php echo IMAGES ?>/item-event-1.png" alt="photo" loading="lazy" /></picture>
-								</span>
-								<span class="item-event__col item-event__col_right grid-col grid-col_right">
-									<div class="item-event__title ui-title ui-title_default ui-title_color-gray ui-title_size-middle">Ох березы мои березы,</div>
-									<span class="item-event__text">Презентация нового альбома</span>
-									<span class="item-event__author"><span class="item-event__author-text">Автор:</span><span class="item-event__author-value">Клава Кока</span></span>
-									<span class="item-event__time">
-										<svg class="item-event__time-icon module-svg-icon module-svg-icon_icon-clock" viewBox="0 0 24 24"><use href="#icon-clock"></use></svg><span class="item-event__time-text">14:45</span>
-									</span>
-									<div class="item-event__button ui-button ui-button_type_default ui-button_size_default"><span class="ui-button__text">Подробнее</span></div>
-								</span>
-							</a>
-						</div>
-						<div class="section-events-slider__slide swiper-slide">
-							<a class="section-events-slider__item item-event grid-flex grid-flex grid-flex_wrap js-event-item" href="#">
-								<span class="item-event__col item-event__col_left grid-col grid-col_left">
-									<div class="item-event__date ui-title ui-title_default ui-title_color-gray ui-title_size-middle">12 января<span class="ui-title__date-part"> / 14:45</span></div>
-									<picture class="item-event__image module-photo"><img class="object-fit-cover js-event-item-image" src="<?php echo IMAGES ?>/item-event-2.png" alt="photo" loading="lazy" /></picture>
-								</span>
-								<span class="item-event__col item-event__col_right grid-col grid-col_right">
-									<div class="item-event__title ui-title ui-title_default ui-title_color-gray ui-title_size-middle">Stand up night!,</div>
-									<span class="item-event__text">Презентация нового альбома</span>
-									<span class="item-event__author"><span class="item-event__author-text">Автор:</span><span class="item-event__author-value">Клава Кока</span></span>
-									<span class="item-event__time">
-										<svg class="item-event__time-icon module-svg-icon module-svg-icon_icon-clock" viewBox="0 0 24 24"><use href="#icon-clock"></use></svg><span class="item-event__time-text">14:45</span>
-									</span>
-									<div class="item-event__button ui-button ui-button_type_default ui-button_size_default"><span class="ui-button__text">Подробнее</span></div>
-								</span>
-							</a>
-						</div>
-						<div class="section-events-slider__slide swiper-slide">
-							<a class="section-events-slider__item item-event grid-flex grid-flex grid-flex_wrap js-event-item" href="#">
-								<span class="item-event__col item-event__col_left grid-col grid-col_left">
-									<div class="item-event__date ui-title ui-title_default ui-title_color-gray ui-title_size-middle">12 января<span class="ui-title__date-part"> / 14:45</span></div>
-									<picture class="item-event__image module-photo"><img class="object-fit-cover js-event-item-image" src="<?php echo IMAGES ?>/item-event-1.png" alt="photo" loading="lazy" /></picture>
-								</span>
-								<span class="item-event__col item-event__col_right grid-col grid-col_right">
-									<div class="item-event__title ui-title ui-title_default ui-title_color-gray ui-title_size-middle">Ох березы мои березы,</div>
-									<span class="item-event__text">Презентация нового альбома</span>
-									<span class="item-event__author"><span class="item-event__author-text">Автор:</span><span class="item-event__author-value">Клава Кока</span></span>
-									<span class="item-event__time">
-										<svg class="item-event__time-icon module-svg-icon module-svg-icon_icon-clock" viewBox="0 0 24 24"><use href="#icon-clock"></use></svg><span class="item-event__time-text">14:45</span>
-									</span>
-									<div class="item-event__button ui-button ui-button_type_default ui-button_size_default"><span class="ui-button__text">Подробнее</span></div>
-								</span>
-							</a>
-						</div>
-						<div class="section-events-slider__slide swiper-slide">
-							<a class="section-events-slider__item item-event grid-flex grid-flex grid-flex_wrap js-event-item" href="#">
-								<span class="item-event__col item-event__col_left grid-col grid-col_left">
-									<div class="item-event__date ui-title ui-title_default ui-title_color-gray ui-title_size-middle">12 января<span class="ui-title__date-part"> / 14:45</span></div>
-									<picture class="item-event__image module-photo"><img class="object-fit-cover js-event-item-image" src="<?php echo IMAGES ?>/item-event-2.png" alt="photo" loading="lazy" /></picture>
-								</span>
-								<span class="item-event__col item-event__col_right grid-col grid-col_right">
-									<div class="item-event__title ui-title ui-title_default ui-title_color-gray ui-title_size-middle">Stand up night!,</div>
-									<span class="item-event__text">Презентация нового альбома</span>
-									<span class="item-event__author"><span class="item-event__author-text">Автор:</span><span class="item-event__author-value">Клава Кока</span></span>
-									<span class="item-event__time">
-										<svg class="item-event__time-icon module-svg-icon module-svg-icon_icon-clock" viewBox="0 0 24 24"><use href="#icon-clock"></use></svg><span class="item-event__time-text">14:45</span>
-									</span>
-									<div class="item-event__button ui-button ui-button_type_default ui-button_size_default"><span class="ui-button__text">Подробнее</span></div>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="section-events-slider__pagination slider-pagination slider-pagination_gray">
-				<div class="slider-pagination__bullet js-slider-default-pagination-bullet"></div>
-				<div class="slider-pagination__index js-slider-default-pagination-index"></div>
-			</div>
-			<a class="section-events-slider__button ui-button ui-button_type_default ui-button_size_default" href="#"><span class="ui-button__text">Все события</span></a>
-		</div>
-	</section>
+	<?php get_template_part('/template-parts/section-events-slider', null, [
+		'query' => [
+			'post_type' => 'events',
+			'posts_per_page' => 4
+		]
+	]); ?>
 	<section class="section-core section-core section-news-slider" props="{}">
 		<div class="section-news-slider__wrapper wrapper">
 			<div class="section-news-slider__flex grid-flex grid-flex_justify-space-beetwen grid-flex_vertical-center">

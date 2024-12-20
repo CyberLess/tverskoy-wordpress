@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__ . "/includes/supports.php";
 require_once __DIR__ . "/includes/constants.php";
 require_once __DIR__ . "/includes/filters.php";
