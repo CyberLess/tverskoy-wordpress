@@ -12,7 +12,27 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6764be91e7934",
+            "label": "Ссылка на сайт",
+            "name": "sitelink",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -94,5 +114,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734654613
+    "modified": 1734655680
 }
