@@ -1021,122 +1021,12 @@ get_header();
 			'posts_per_page' => 4
 		]
 	]); ?>
-	<section class="section-core section-core section-news-slider" props="{}">
-		<div class="section-news-slider__wrapper wrapper">
-			<div class="section-news-slider__flex grid-flex grid-flex_justify-space-beetwen grid-flex_vertical-center">
-				<div class="section-news-slider__title ui-title ui-title_default ui-title_color-gray ui-title_size-default">новости</div>
-				<a class="section-news-slider__button section-news-slider__button_desktop ui-button ui-button_type_default ui-button_size_default" href="#"><span class="ui-button__text">Все новости</span></a>
-			</div>
-			<div class="section-news-slider__slider js-slider-default">
-				<div class="section-news-slider__slider-wrapper swiper-wrapper">
-					<div class="section-news-slider__slide section-news-slider__slide_border-top swiper-slide">
-						<a class="section-news-slider__item item-news item-news_border-top" href="#">
-							<span class="item-news__content">
-								<span class="item-news__content-top">
-									<span class="item-news__info"><span class="item-news__info-item">Кухня</span><span class="item-news__info-item">03.24</span></span>
-									<div class="item-news__title ui-title ui-title_default ui-title_color-gray ui-title_size-middle">Новое меню в&nbsp;ресторане</div>
-									<span class="item-news__text js-set-length-text" data-length="110" data-length-mobile="57">
-										Компактное помещение с&nbsp;косметическим ремонтом. Белые стены, потолки 4,5 метра, неограниченное количество розеток, деревянssssssssssssssssss ssssssssssssssss ssssss
-									</span>
-								</span>
-								<span class="item-news__content-bottom">
-									<span class="item-news__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default">
-										<span class="ui-button__icon ui-button__icon_icon-arrow-2">
-											<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg>
-										</span>
-									</span>
-								</span>
-							</span>
-						</a>
-					</div>
-					<div class="section-news-slider__slide section-news-slider__slide_border-top swiper-slide">
-						<a class="section-news-slider__item item-news item-news_border-top" href="#">
-							<span class="item-news__content">
-								<span class="item-news__content-top">
-									<span class="item-news__info"><span class="item-news__info-item">Кухня</span><span class="item-news__info-item">03.24</span></span>
-									<div class="item-news__title ui-title ui-title_default ui-title_color-gray ui-title_size-middle">Новое меню в&nbsp;</div>
-									<span class="item-news__text js-set-length-text" data-length="110" data-length-mobile="57">Компактное количество розеток, деревянные</span>
-								</span>
-								<span class="item-news__content-bottom">
-									<span class="item-news__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default">
-										<span class="ui-button__icon ui-button__icon_icon-arrow-2">
-											<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg>
-										</span>
-									</span>
-								</span>
-							</span>
-						</a>
-					</div>
-					<div class="section-news-slider__slide section-news-slider__slide_height swiper-slide">
-						<a class="section-news-slider__item item-news" href="#">
-							<picture class="item-news__image item-news__image_hidden-large-tablet module-photo"><img class="image-source" src="<?php echo IMAGES ?>/item-news-1.png" alt="photo" loading="lazy" /></picture>
-							<span class="item-news__content item-news__content_background item-news__content_slider">
-								<span class="item-news__content-top">
-									<span class="item-news__info"><span class="item-news__info-item">Кухня</span><span class="item-news__info-item">03.24</span></span>
-									<div class="item-news__title ui-title ui-title_default ui-title_color-gray ui-title_size-middle">Новое меню в&nbsp;ресторане &quot;Восточный экспресс&quot;</div>
-									<span class="item-news__text js-set-length-text" data-length="110" data-length-mobile="57">
-										Компактное помещение с&nbsp;косметическим ремонтом. Белые стены, потолки 4,5 метра, неограниченное количество розеток, деревянssssssssssssssssss ssssssssssssssss ssssss
-									</span>
-								</span>
-								<span class="item-news__content-bottom">
-									<span class="item-news__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default">
-										<span class="ui-button__icon ui-button__icon_icon-arrow-2">
-											<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg>
-										</span>
-									</span>
-								</span>
-							</span>
-						</a>
-					</div>
-					<div class="section-news-slider__slide section-news-slider__slide_border-top swiper-slide">
-						<a class="section-news-slider__item item-news item-news_border-top" href="#">
-							<span class="item-news__content">
-								<span class="item-news__content-top">
-									<span class="item-news__info"><span class="item-news__info-item">Кухня</span><span class="item-news__info-item">03.24</span></span>
-									<div class="item-news__title ui-title ui-title_default ui-title_color-gray ui-title_size-middle">Новое меню в&nbsp;ресторане &quot;Восточный экспресс&quot;</div>
-									<span class="item-news__text js-set-length-text" data-length="110" data-length-mobile="57">
-										Компактное помещение с&nbsp;косметическим ремонтом. Белые стены, потолки 4,5 метра, неограниченное количество розеток, деревянssssssssssssssssss ssssssssssssssss ssssss
-									</span>
-								</span>
-								<span class="item-news__content-bottom">
-									<span class="item-news__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default">
-										<span class="ui-button__icon ui-button__icon_icon-arrow-2">
-											<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg>
-										</span>
-									</span>
-								</span>
-							</span>
-						</a>
-					</div>
-					<div class="section-news-slider__slide section-news-slider__slide_border-top swiper-slide">
-						<a class="section-news-slider__item item-news item-news_border-top" href="#">
-							<span class="item-news__content">
-								<span class="item-news__content-top">
-									<span class="item-news__info"><span class="item-news__info-item">Кухня</span><span class="item-news__info-item">03.24</span></span>
-									<div class="item-news__title ui-title ui-title_default ui-title_color-gray ui-title_size-middle">Новое меню в&nbsp;ресторане &quot;Восточный экспресс&quot;</div>
-									<span class="item-news__text js-set-length-text" data-length="110" data-length-mobile="57">
-										Компактное помещение с&nbsp;косметическим ремонтом. Белые стены, потолки 4,5 метра, неограниченное количество розеток, деревянssssssssssssssssss ssssssssssssssss ssssss
-									</span>
-								</span>
-								<span class="item-news__content-bottom">
-									<span class="item-news__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default">
-										<span class="ui-button__icon ui-button__icon_icon-arrow-2">
-											<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg>
-										</span>
-									</span>
-								</span>
-							</span>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="section-news-slider__pagination slider-pagination slider-pagination_gray">
-				<div class="slider-pagination__bullet js-slider-default-pagination-bullet"></div>
-				<div class="slider-pagination__index js-slider-default-pagination-index"></div>
-			</div>
-			<a class="section-news-slider__button section-news-slider__button_mobile ui-button ui-button_type_default ui-button_size_default" href="#"><span class="ui-button__text">Все новости</span></a>
-		</div>
-	</section>
+	<?php get_template_part('/template-parts/section-news-slider', null, [
+		'query' => [
+			'post_type' => 'post',
+			'posts_per_page' => 5
+		]
+	]); ?>
 </main>
 <?php
 get_footer();
