@@ -2,8 +2,12 @@
 // $socials = get_field('socials', 'options');
 // $menu = wp_get_nav_sorted_menu_items('main');
 ?>
+<?php
+	$phone = get_field('phone', 'options');
+	$email = get_field('email', 'options');
+	$addr = get_field('addr', 'options');
+?>
 <section class="part-modals">
-	<h2 class="visually-hidden">Секция с&nbsp;модальными окнами сайта</h2>
 	<div class="modal fade" id="modal-rent" aria-hidden="true" role="dialog">
 		<div class="modal-dialog modal-dialog_position-center">
 			<div class="modal-content modal-content_default modal-content_default-padding modal-content_default-width">
@@ -189,8 +193,12 @@
 						<div class="modal__menu-item"><a class="modal__menu-link" href="#">Контакты</a></div>
 					</div>
 					<div class="modal__info">
-						<div class="modal__info-item"><a class="modal__info-value" href="tel:+74951234567">+7 (495) 123-45-67</a></div>
-						<div class="modal__info-item"><a class="modal__info-value" href="mailto:info@tverskoy.com">info@tverskoy.com</a></div>
+						<?php if($phone): ?>
+							<div class="modal__info-item"><a class="modal__info-value" href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></div>
+						<?php endif; ?>
+						<?php if($email): ?>
+							<div class="modal__info-item"><a class="modal__info-value" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></div>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>

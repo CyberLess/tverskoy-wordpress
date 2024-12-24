@@ -1,3 +1,8 @@
+<?php
+	$phone = get_field('phone', 'options');
+	$email = get_field('email', 'options');
+	$addr = get_field('addr', 'options');
+?>
 		<footer class="part-footer">
 			<div class="part-footer__wrapper wrapper">
 				<div class="part-footer__top">
@@ -13,18 +18,24 @@
 								<div class="part-footer__menu-item"><a class="part-footer__menu-link" href="#">Контакты</a></div>
 							</div>
 							<div class="part-footer__contacts">
-								<div class="part-footer__contacts-item grid-flex grid-flex_justify-space-beetwen grid-flex_vertical-center">
-									<div class="part-footer__contacts-name">Адрес</div>
-									<div class="part-footer__contacts-value">Тверской бульвар 27, стр. 6</div>
-								</div>
-								<div class="part-footer__contacts-item grid-flex grid-flex_justify-space-beetwen grid-flex_vertical-center">
-									<div class="part-footer__contacts-name">Телефон</div>
-									<a class="part-footer__contacts-value" href="tel:+74951234567">+7 (495) 123-45-67</a>
-								</div>
-								<div class="part-footer__contacts-item grid-flex grid-flex_justify-space-beetwen grid-flex_vertical-center">
-									<div class="part-footer__contacts-name">Почта</div>
-									<a class="part-footer__contacts-value" href="mailto:info@tverskoy.com">info@tverskoy.com</a>
-								</div>
+								<?php if($addr): ?>
+									<div class="part-footer__contacts-item grid-flex grid-flex_justify-space-beetwen grid-flex_vertical-center">
+										<div class="part-footer__contacts-name">Адрес</div>
+										<div class="part-footer__contacts-value"><?php echo $addr; ?></div>
+									</div>
+								<?php endif; ?>
+								<?php if($phone): ?>
+									<div class="part-footer__contacts-item grid-flex grid-flex_justify-space-beetwen grid-flex_vertical-center">
+										<div class="part-footer__contacts-name">Телефон</div>
+										<a class="part-footer__contacts-value" href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a>
+									</div>
+								<?php endif; ?>
+								<?php if($email): ?>
+									<div class="part-footer__contacts-item grid-flex grid-flex_justify-space-beetwen grid-flex_vertical-center">
+										<div class="part-footer__contacts-name">Почта</div>
+										<a class="part-footer__contacts-value" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+									</div>
+								<?php endif; ?>
 							</div>
 						</div>
 						<div class="part-footer__col part-footer__col_right grid-col grid-col_right">
