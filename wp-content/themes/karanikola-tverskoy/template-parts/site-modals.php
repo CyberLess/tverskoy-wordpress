@@ -6,6 +6,7 @@
 	$phone = get_field('phone', 'options');
 	$email = get_field('email', 'options');
 	$addr = get_field('addr', 'options');
+	$menu = wp_get_nav_sorted_menu_items('main');
 ?>
 <section class="part-modals">
 	<div class="modal fade" id="modal-rent" aria-hidden="true" role="dialog">
@@ -186,12 +187,18 @@
 		<div class="modal-dialog modal-dialog_position-center">
 			<div class="modal-content modal-content_menu">
 				<div class="modal-body modal-body_menu">
-					<div class="modal__menu">
-						<div class="modal__menu-item"><a class="modal__menu-link" href="#">Новости</a></div>
-						<div class="modal__menu-item"><a class="modal__menu-link" href="#">Мероприятия</a></div>
-						<div class="modal__menu-item"><a class="modal__menu-link" href="#">Партнерам</a></div>
-						<div class="modal__menu-item"><a class="modal__menu-link" href="#">Контакты</a></div>
-					</div>
+					<?php if($menu): ?>
+						<div class="modal__menu">
+							<?php foreach($menu as $item): ?>
+								<div class="modal__menu-item">
+									<a class="modal__menu-link" href="<?php echo $item->url; ?>">
+										<?php echo $item->title; ?>
+									</a>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
+
 					<div class="modal__info">
 						<?php if($phone): ?>
 							<div class="modal__info-item"><a class="modal__info-value" href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></div>

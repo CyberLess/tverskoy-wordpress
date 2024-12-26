@@ -9,7 +9,5 @@ if ( function_exists( 'add_image_size' ) ) {
 }
 
 register_nav_menus([
-	'main' => 'Main Menu',
-	'footer_left' => 'Footer Left',
-	'footer_right' => 'Footer Right',
+	'main' => 'Основное меню',
 ]);

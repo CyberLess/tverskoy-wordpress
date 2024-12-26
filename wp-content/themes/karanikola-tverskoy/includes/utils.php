@@ -54,3 +54,38 @@ function getDomainFromUrl($url) {
     $host = parse_url($url, PHP_URL_HOST);
     return preg_replace('/^www\./', '', $host);
 }
+
+
+function wp_get_nav_sorted_menu_items($name) {
+	$locations = get_nav_menu_locations();
+
+	if (empty($locations[ $name ])) {
+		return false;
+	}
+
+	return nav_sort_menu_items(wp_get_nav_menu_items($locations[ $name ]));
+}
+
+function nav_sort_menu_items($items) {
+	if (!$items) {
+		return false;
+	}
+	return _nav_get_children($items, 0, 0);
+}
+
+function _nav_get_children($items, $parentId, $depth) {
+	if (!$items) {
+		return false;
+	}
+	$children = array();
+	foreach($items as $id => $child)
+	{
+		if($child->menu_item_parent == $parentId)
+		{
+			$child->depth = $depth;
+			$child->children = _nav_get_children($items, $child->ID, $depth + 1);
+			$children[] = $child;
+		}
+	}
+	return $children;
+}

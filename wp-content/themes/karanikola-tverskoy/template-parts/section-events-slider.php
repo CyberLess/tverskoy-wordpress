@@ -2,6 +2,9 @@
 $query = new WP_Query;
 $posts = $query->query($args['query']);
 $total_pages = $query->max_num_pages;
+
+$lising = get_field('events_listing', 'options');
+$listing_url = !empty($lising) ? get_the_permalink($lising->ID) : null;
 ?>
 <?php if($posts): ?>
 <section class="section-core section-core section-events-slider" props="{}">
@@ -31,7 +34,9 @@ $total_pages = $query->max_num_pages;
 			<div class="slider-pagination__bullet js-slider-default-pagination-bullet"></div>
 			<div class="slider-pagination__index js-slider-default-pagination-index"></div>
 		</div>
-		<a class="section-events-slider__button ui-button ui-button_type_default ui-button_size_default" href="#"><span class="ui-button__text">Все события</span></a>
+		<?php if($listing_url): ?>
+			<a class="section-events-slider__button ui-button ui-button_type_default ui-button_size_default" href="<?php echo $listing_url; ?>"><span class="ui-button__text">Все события</span></a>
+		<?php endif; ?>
 	</div>
 </section>
 <?php endif; ?>

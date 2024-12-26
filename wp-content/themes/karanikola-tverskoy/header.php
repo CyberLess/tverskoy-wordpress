@@ -15,6 +15,9 @@
 </head>
 
 <body>
+	<?php
+		$menu = wp_get_nav_sorted_menu_items('main');
+	?>
 	<?php get_template_part('/template-parts/site-sprite'); ?>
 	<header class="part-header js-part-header">
 		<div class="part-header__wrapper wrapper">
@@ -25,12 +28,18 @@
 					</a>
 				</div>
 				<div class="part-header__col">
-					<div class="part-header__menu grid-flex">
-						<div class="part-header__menu-item"><a class="part-header__menu-link" href="#">Новости</a></div>
-						<div class="part-header__menu-item"><a class="part-header__menu-link" href="#">Мероприятия</a></div>
-						<div class="part-header__menu-item"><a class="part-header__menu-link" href="#">Партнерам</a></div>
-						<div class="part-header__menu-item"><a class="part-header__menu-link" href="#">Контакты</a></div>
-					</div>
+					<?php if($menu): ?>
+						<div class="part-header__menu grid-flex">
+							<?php foreach($menu as $item): ?>
+								<div class="part-header__menu-item">
+									<a class="part-header__menu-link" href="<?php echo $item->url; ?>">
+										<?php echo $item->title; ?>
+									</a>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
+
 				</div>
 				<div class="part-header__col grid-flex">
 					<a class="part-header__button ui-button ui-button_type_default ui-button_size_default" href="#"><span class="ui-button__text">Выбрать где поесть</span></a>

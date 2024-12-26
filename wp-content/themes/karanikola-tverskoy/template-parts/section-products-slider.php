@@ -1,5 +1,6 @@
 <?php
 $posts = get_field('favorite');
+
 $grouped_posts = [];
 if ($posts) {
     foreach ($posts as $post) {
@@ -16,6 +17,9 @@ if ($posts) {
         }
     }
 }
+
+$lising = get_field('institutions_listing', 'options');
+$listing_url = !empty($lising) ? get_the_permalink($lising->ID) : null;
 ?>
 <?php if(!empty($posts)): ?>
 	<section class="section-core section-core section-products-slider js-products-slider" props="{}">
@@ -41,7 +45,9 @@ if ($posts) {
 														<?php echo get_the_title($post->ID); ?>
 													</div>
 												<?php endforeach; ?>
-												<a class="section-products-slider__more" href="#">Смотреть все</a>
+												<?php if($listing_url): ?>
+													<a class="section-products-slider__more" href="<?php echo $listing_url ?>">Смотреть все</a>
+												<?php endif; ?>
 											</div>
 										<?php endif; ?>
 									</div>
@@ -152,8 +158,10 @@ if ($posts) {
 				<?php endforeach; ?>
 			</div>
 		</div>
-		<a class="section-products-slider__button ui-button ui-button_type_purple-border ui-button_size_default" href="#">
-			<span class="ui-button__text">Посмотреть все</span>
-		</a>
+		<?php if($listing_url): ?>
+			<a class="section-products-slider__button ui-button ui-button_type_purple-border ui-button_size_default" href="<?php echo $listing_url; ?>">
+				<span class="ui-button__text">Посмотреть все</span>
+			</a>
+		<?php endif; ?>
 	</section>
 <?php endif; ?>
