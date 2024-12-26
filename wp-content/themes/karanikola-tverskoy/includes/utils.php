@@ -13,7 +13,7 @@ function getTplPageURL($TEMPLATE_NAME){
 }
 
 
-function getDateTimeFormat($datetime) {
+function getDateTimeFormat($datetime, $dateformat = "d F") {
     if (!$datetime) {
         return ['date' => '', 'time' => ''];
     }
@@ -34,9 +34,23 @@ function getDateTimeFormat($datetime) {
     ];
 
     $date = new DateTime($datetime);
-    $dateFormatted = $date->format('d F');
-    $dateFormatted = strtr($dateFormatted, $months);
+	if ($dateformat === 'd F') {
+		$dateFormatted = $date->format('d F');
+		$dateFormatted = strtr($dateFormatted, $months);
+	} else {
+		$dateFormatted = $date->format($dateformat);
+	}
     $timeFormatted = $date->format('H:i');
-
     return ['date' => $dateFormatted, 'time' => $timeFormatted];
+}
+
+function getDomainFromUrl($url) {
+	if (!$url) {
+		return '';
+	}
+    if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
+        $url = "http://" . $url;
+    }
+    $host = parse_url($url, PHP_URL_HOST);
+    return preg_replace('/^www\./', '', $host);
 }
