@@ -17,6 +17,8 @@
 <body>
 	<?php
 		$menu = wp_get_nav_sorted_menu_items('main');
+		$lising = get_field('institutions_listing', 'options');
+		$listing_url = !empty($lising) ? get_the_permalink($lising->ID) : null;
 	?>
 	<?php get_template_part('/template-parts/site-sprite'); ?>
 	<header class="part-header js-part-header">
@@ -42,7 +44,9 @@
 
 				</div>
 				<div class="part-header__col grid-flex">
-					<a class="part-header__button ui-button ui-button_type_default ui-button_size_default" href="#"><span class="ui-button__text">Выбрать где поесть</span></a>
+					<?php if($listing_url): ?>
+						<a class="part-header__button ui-button ui-button_type_default ui-button_size_default" href="<?php echo $listing_url; ?>"><span class="ui-button__text">Выбрать где поесть</span></a>
+					<?php endif; ?>
 					<button class="part-header__button-burger button-burger js-button-burger" aria-label="Кнопка для&nbsp;открытия мобильного меню" data-bs-toggle="modal" data-bs-target="#modal-menu">
 						<span class="button-burger__lines" aria-hidden="true">
 							<span class="button-burger__line"></span><span class="button-burger__line"></span><span class="button-burger__line"></span><span class="button-burger__line"></span>
