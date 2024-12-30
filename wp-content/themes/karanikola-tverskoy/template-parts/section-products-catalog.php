@@ -16,7 +16,7 @@ $posts = $query->query(array_merge($params, [
 	]
 ]));
 $total_pages = $query->max_num_pages;
-
+$item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item-rent';
 ?>
 
 <section class="section-core section-core section-products-catalog js-fixed-element-section" props="{}">
@@ -65,7 +65,7 @@ $total_pages = $query->max_num_pages;
 			<?php if($posts): ?>
 				<div class="section-products-catalog__items">
 					<?php foreach($posts as $post): ?>
-						<?php get_template_part('template-parts/item-product', null, ['item' => $post]); ?>
+						<?php get_template_part("template-parts/{$item_template}", null, ['item' => $post]); ?>
 					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>

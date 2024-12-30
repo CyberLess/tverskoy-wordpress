@@ -1,5 +1,5 @@
 <?php
-
+add_filter('wpcf7_autop_or_not', '__return_false');
 add_filter('script_loader_tag', "add_module_to_tag_script", 10, 3);
 // add_filter('allowed_http_origins', 'add_allowed_origins');
 

@@ -17,33 +17,9 @@
 						<svg class="modal__module-svg-icon modal__module-svg-icon_icon-close" viewBox="0 0 24 24"><use href="#icon-close"></use></svg>
 					</button>
 					<div class="modal__title">Аренда помещения</div>
-					<form class="modal__form js-form">
-						<div class="modal__form-fields">
-							<label class="modal__form-field form-field js-form-field">
-								<span class="form-field__content">
-									<input class="form-field__input form-field__input_border form-field__input_border-gray js-form-field-input" type="text" placeholder="Имя" />
-									<svg class="form-field__clear js-form-field-clear module-svg-icon module-svg-icon_icon-close" viewBox="0, 0, 20, 20"><use href="#icon-close"></use></svg>
-								</span>
-								<span class="form-field__error js-form-field-error"></span>
-							</label>
-							<label class="modal__form-field form-field js-form-field">
-								<span class="form-field__content">
-									<input class="form-field__input form-field__input_border form-field__input_border-gray js-form-field-input" type="text" placeholder="E-mail" />
-									<svg class="form-field__clear js-form-field-clear module-svg-icon module-svg-icon_icon-close" viewBox="0, 0, 20, 20"><use href="#icon-close"></use></svg>
-								</span>
-								<span class="form-field__error js-form-field-error"></span>
-							</label>
-							<label class="modal__form-field form-field js-form-field">
-								<span class="form-field__content">
-									<input class="form-field__input form-field__input_border form-field__input_border-gray js-form-field-input" type="text" placeholder="+7 (___) ___-__-__" />
-									<svg class="form-field__clear js-form-field-clear module-svg-icon module-svg-icon_icon-close" viewBox="0, 0, 20, 20"><use href="#icon-close"></use></svg>
-								</span>
-								<span class="form-field__error js-form-field-error"></span>
-							</label>
-						</div>
-						<button class="modal__button modal__button_submit ui-button ui-button_default ui-button_type_gray ui-button_size_default"><span class="ui-button__text">Отправить</span></button>
-						<div class="modal__form-policy">Отправляя данную форму вы соглашаетесь с политикой обработки персональных данных.</div>
-					</form>
+					<div class="modal__form">
+						<?php echo do_shortcode('[contact-form-7 id="9cc34e3" title="Форма - аренда"]'); ?>
+					</div>
 				</div>
 			</div>
 		</div>
