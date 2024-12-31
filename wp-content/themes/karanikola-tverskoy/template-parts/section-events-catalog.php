@@ -15,8 +15,11 @@ $total_pages = $query->max_num_pages;
 			</div>
 		<?php endif; ?>
 		<?php if($posts): ?>
-			<div class="section-events-catalog__main part-section-main">
-				<div class="section-events-catalog__flex grid-flex grid-flex_wrap js-event-container">
+			<form action="<?php echo admin_url( "admin-ajax.php" ) ?>" data-scroll="true" class="section-events-catalog__main part-section-main js-listing">
+				<input type="hidden" name="page" value="1">
+				<input type="hidden" name="type" value="events">
+				<input type="hidden" name="action" value="load_more">
+				<div class="section-events-catalog__flex grid-flex grid-flex_wrap js-event-container js-listing-body">
 					<picture class="section-events-catalog__module-photo module-photo event-item-preview js-event-preview"></picture>
 					<?php foreach( $posts as $item ): ?>
 						<div class="section-events-catalog__col">
@@ -24,7 +27,7 @@ $total_pages = $query->max_num_pages;
 						</div>
 					<? endforeach; ?>
 				</div>
-			</div>
+			</form>
 		<?php endif; ?>
 	</div>
 </section>

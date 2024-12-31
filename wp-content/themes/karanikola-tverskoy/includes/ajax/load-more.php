@@ -14,6 +14,12 @@ function call_load_more(){
 		"post_type" => $type,
 		'paged' => $page,
 	];
+	$itemTemplate = [
+		"events" => "item-event",
+		"post" => "item-news",
+		"institution" => "item-product",
+		"premises" => "item-rent"
+	];
 
 	if (!empty($taxonomies)) {
 		$request['tax_query'] = [];
@@ -30,13 +36,25 @@ function call_load_more(){
 	$posts = $query->query($request);
 	$result['total_pages'] = $query->max_num_pages;
 
+	// var_dump([
+	// 	"request" => $request,
+	// 	"posts" => $posts
+	// ]);
+
 	if ($posts) {
 		foreach ($posts as $post) {
 			ob_start();
-			get_template_part("/template-parts/item-{$type}", null, [
-				'post' => $post
+			get_template_part("/template-parts/{$itemTemplate[$type]}", null, [
+				'item' => $post
 			]);
-			$template = "<li>" . trim(ob_get_clean()) . "</li>";
+			if ($type === 'events') {
+				$template = "<div class='section-events-catalog__col'>" . trim(ob_get_clean()) . "</div>";
+			} else if ($type === 'post') {
+				$template = "<div class='section-news-catalog__col'>" . trim(ob_get_clean()) . "</div>";
+			} else {
+				$template = trim(ob_get_clean());
+			}
+
 			array_push($result['list'], $template);
 		}
 	}

@@ -2,6 +2,9 @@
 <?php
 get_header();
 ?>
+<?php
+	$addr = get_field('addr', 'options');
+?>
 <main class="part-main-content
 	<section class="section-core section-core section-offer" props="{}">
 		<div class="section-offer__wrapper wrapper">
@@ -38,10 +41,13 @@ get_header();
 					<div class="section-offer__trigger grid-flex grid-flex_justify-center">
 						<svg class="section-offer__trigger-icon module-svg-icon module-svg-icon_icon-arrow" viewBox="0, 0, 10, 14"><use href="#icon-arrow"></use></svg>
 					</div>
-					<div class="section-offer__info">
-						Адрес кластера: <br />
-						Тверской бульвар 27, стр. 6
-					</div>
+					<?php if($addr): ?>
+						<div class="section-offer__info">
+							Адрес кластера: <br />
+							<?php echo $addr; ?>
+						</div>
+					<?php endif; ?>
+
 				</div>
 			</div>
 		</div>

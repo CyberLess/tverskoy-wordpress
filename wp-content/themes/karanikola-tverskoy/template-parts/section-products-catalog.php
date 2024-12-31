@@ -61,14 +61,17 @@ $item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item
 				<?php endif; ?>
 			</picture>
 		</div>
-		<div class="section-products-catalog__col section-products-catalog__col_right grid-col grid-col_right">
+		<form action="<?php echo admin_url( "admin-ajax.php" ) ?>" data-scroll="true" class="section-products-catalog__col section-products-catalog__col_right grid-col grid-col_right js-listing">
+			<input type="hidden" name="page" value="1">
+			<input type="hidden" name="type" value="<?php echo $params['post_type']; ?>">
+			<input type="hidden" name="action" value="load_more">
 			<?php if($posts): ?>
-				<div class="section-products-catalog__items">
+				<div class="section-products-catalog__items js-listing-body">
 					<?php foreach($posts as $post): ?>
 						<?php get_template_part("template-parts/{$item_template}", null, ['item' => $post]); ?>
 					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
-		</div>
+		</form>
 	</div>
 </section>

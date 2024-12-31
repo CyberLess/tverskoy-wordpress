@@ -25,7 +25,7 @@
 				<?php if($text): ?>
 					<div class="part-section-content__item" <?php if($name): ?>	id="<?php echo $anchor; ?>"<?php endif; ?>>
 						<div class="part-section-content__flex grid-flex grid-flex_justify-end">
-							<div class="part-section-content__col grid-col grid-col_right">
+							<div class="part-section-content__col grid-col grid-col_right content">
 								<?php echo $text; ?>
 							</div>
 						</div>

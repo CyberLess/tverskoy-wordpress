@@ -6,8 +6,7 @@ $categories = get_terms([
 ]);
 $params = $args['query'] ?? [];
 $query = new WP_Query;
-$posts = $query->query(array_merge($params, [
-]));
+$posts = $query->query($params);
 $banner = $args['banner'] ?? null;
 $total_pages = $query->max_num_pages;
 $mainLink = getTplPageURL('template-pages/news.php');
@@ -94,17 +93,30 @@ $mainLink = getTplPageURL('template-pages/news.php');
 			</a>
 		<?php endif; ?>
 
-		<div class="section-news-catalog__main part-section-main">
+		<form action="<?php echo admin_url( "admin-ajax.php" ) ?>" class="section-news-catalog__main part-section-main js-listing">
+			<input type="hidden" name="page" value="1">
+			<input type="hidden" name="type" value="post">
+			<input type="hidden" name="action" value="load_more">
+			<?php if(!empty($params['tax_query'])): ?>
+				<?php foreach($params['tax_query'] as $tax): ?>
+					<input type="hidden" name="taxonomies[<?php echo $tax['taxonomy'] ?>]" value="<?php echo $tax['terms'] ?>">
+				<?php endforeach; ?>
+			<?php endif; ?>
+
 			<?php if($posts): ?>
-				<div class="section-news-catalog__grid">
+				<div class="section-news-catalog__grid js-listing-body">
 					<?php foreach($posts as $post): ?>
 						<div class="section-news-catalog__col">
 							<?php get_template_part('template-parts/item-news', null, ['item' => $post]); ?>
 						</div>
 					<?php endforeach; ?>
 				</div>
-				<a class="section-news-catalog__button ui-button ui-button_type_default ui-button_size_default" href="#"><span class="ui-button__text">Показать еще</span></a>
+				<?php if($total_pages > 1): ?>
+					<button class="section-news-catalog__button ui-button ui-button_type_default ui-button_size_default js-listing-more">
+						<span class="ui-button__text">Показать еще</span>
+					</button>
+				<?php endif; ?>
 			<?php endif; ?>
-		</div>
+		</form>
 	</div>
 </section>

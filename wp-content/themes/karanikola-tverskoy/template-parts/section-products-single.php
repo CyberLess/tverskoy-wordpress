@@ -35,9 +35,9 @@
 			<?php if($gallery): ?>
 				<div class="section-products-single__slider js-slider-default" data-parameter='{"loop":true,"centeredSlides":true}'>
 					<div class="section-products-single__slider-wrapper swiper-wrapper">
-						<?php foreach($gallery as $image): ?>
+						<?php foreach($gallery as $index => $image): ?>
 							<div class="section-products-single__slide swiper-slide">
-								<picture class="section-products-single__slide-image section-products-single__slide-image_border-radius module-photo">
+								<picture class="section-products-single__slide-image <?php if($index % 3 === 0): ?>section-products-single__slide-image_border-radius<?php endif; ?> module-photo">
 									<img class="object-fit-cover" src="<?php echo $image['sizes']['large'] ?>" alt="<?php echo $image['alt'] ?>" loading="lazy" />
 								</picture>
 							</div>
@@ -63,7 +63,7 @@
 			<div class="section-products-single__content part-section-content">
 				<div class="part-section-content__item">
 					<div class="part-section-content__flex grid-flex grid-flex_justify-end">
-						<div class="part-section-content__col grid-col grid-col_right">
+						<div class="part-section-content__col grid-col grid-col_right content">
 							<?php the_content() ?>
 						</div>
 					</div>
