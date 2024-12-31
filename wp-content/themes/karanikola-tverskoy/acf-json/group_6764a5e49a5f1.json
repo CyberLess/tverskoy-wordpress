@@ -142,6 +142,13 @@
                 "operator": "==",
                 "value": "events"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-pages\/content.php"
+            }
         ]
     ],
     "menu_order": 1,
@@ -155,5 +162,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734656530
+    "modified": 1735629118
 }

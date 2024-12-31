@@ -11,21 +11,7 @@ get_header();
 					</button>
 					<div class="modal__title">Поделитесь статьей</div>
 					<div class="modal__social">
-						<a class="modal__social-button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-middle" href="#">
-							<span class="ui-button__icon ui-button__icon_icon-vk">
-								<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-vk" viewBox="0 0 24 24"><use href="#icon-vk"></use></svg>
-							</span>
-						</a>
-						<a class="modal__social-button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-middle" href="#">
-							<span class="ui-button__icon ui-button__icon_icon-tg">
-								<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-tg" viewBox="0 0 24 24"><use href="#icon-tg"></use></svg>
-							</span>
-						</a>
-						<a class="modal__social-button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-middle" href="#">
-							<span class="ui-button__icon ui-button__icon_icon-whatsapp">
-								<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-whatsapp" viewBox="0 0 24 24"><use href="#icon-whatsapp"></use></svg>
-							</span>
-						</a>
+						<?php the_share() ?>
 					</div>
 					<a class="modal__button modal__button_share ui-button ui-button_type_purple ui-button_size_default" href="#">
 						<span class="ui-button__icon ui-button__icon_icon-link">

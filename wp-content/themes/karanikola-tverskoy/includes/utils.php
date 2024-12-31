@@ -89,3 +89,25 @@ function _nav_get_children($items, $parentId, $depth) {
 	}
 	return $children;
 }
+
+function the_share() {
+	global $post;
+	$title = $post->post_title;
+	$url = get_the_permalink($post->ID);
+?>
+	<a class="section-news-single__social-button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-middle ui-button_type_circle ui-button_size_circle-middle" target="_blank" href='<?php echo "https://vk.com/share.php?url={$url}&title={$title}" ?>'>
+		<span class="ui-button__icon ui-button__icon_icon-vk">
+			<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-vk" viewBox="0 0 24 24"><use href="#icon-vk"></use></svg>
+		</span>
+	</a>
+	<a class="section-news-single__social-button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-middle ui-button_type_circle ui-button_size_circle-middle" target="_blank" href='<?php echo "https://vk.com/share.php?url={$url}&title={$title}" ?>'>
+		<span class="ui-button__icon ui-button__icon_icon-tg">
+			<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-tg" viewBox="0 0 24 24"><use href="#icon-tg"></use></svg>
+		</span>
+	</a>
+	<a class="section-news-single__social-button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-middle ui-button_type_circle ui-button_size_circle-middle" target="_blank" href='<?php echo "https://api.whatsapp.com/send?text={$url}" ?>'>
+		<span class="ui-button__icon ui-button__icon_icon-whatsapp">
+			<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-whatsapp" viewBox="0 0 24 24"><use href="#icon-whatsapp"></use></svg>
+		</span>
+	</a>
+<?}

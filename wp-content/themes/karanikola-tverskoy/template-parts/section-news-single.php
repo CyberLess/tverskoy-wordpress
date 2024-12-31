@@ -32,21 +32,7 @@
 				<div class="section-news-single__col">
 					<div class="section-news-single__subtitle section-news-single__subtitle_social ui-title ui-title_default ui-title_color-gray ui-title_size-small">Поделиться</div>
 					<div class="section-news-single__social">
-						<a class="section-news-single__social-button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-middle ui-button_type_circle ui-button_size_circle-middle" href="#">
-							<span class="ui-button__icon ui-button__icon_icon-vk">
-								<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-vk" viewBox="0 0 24 24"><use href="#icon-vk"></use></svg>
-							</span>
-						</a>
-						<a class="section-news-single__social-button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-middle ui-button_type_circle ui-button_size_circle-middle" href="#">
-							<span class="ui-button__icon ui-button__icon_icon-tg">
-								<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-tg" viewBox="0 0 24 24"><use href="#icon-tg"></use></svg>
-							</span>
-						</a>
-						<a class="section-news-single__social-button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-middle ui-button_type_circle ui-button_size_circle-middle" href="#">
-							<span class="ui-button__icon ui-button__icon_icon-whatsapp">
-								<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-whatsapp" viewBox="0 0 24 24"><use href="#icon-whatsapp"></use></svg>
-							</span>
-						</a>
+						<?php the_share() ?>
 					</div>
 				</div>
 

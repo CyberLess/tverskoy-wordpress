@@ -4,7 +4,7 @@
     "menu_order": 0,
     "active": true,
     "post_type": "events",
-    "advanced_configuration": false,
+    "advanced_configuration": true,
     "import_source": "",
     "import_date": "",
     "labels": {
@@ -20,8 +20,8 @@
         "new_item": "Новый Мероприятие",
         "parent_item_colon": "Родитель Мероприятие:",
         "search_items": "Поиск Мероприятия",
-        "not_found": "Не найдено мероприятия",
-        "not_found_in_trash": "В корзине не найдено мероприятия",
+        "not_found": "Не найдено мероприятий",
+        "not_found_in_trash": "В корзине не найдено мероприятий",
         "archives": "Архивы Мероприятие",
         "attributes": "Атрибуты Мероприятие",
         "featured_image": "",
@@ -59,7 +59,7 @@
     "menu_position": "",
     "menu_icon": {
         "type": "dashicons",
-        "value": "dashicons-admin-post"
+        "value": "dashicons-groups"
     },
     "rename_capabilities": false,
     "singular_capability_name": "post",
@@ -85,5 +85,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1734638600
+    "modified": 1735630114
 }

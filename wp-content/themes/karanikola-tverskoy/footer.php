@@ -2,6 +2,7 @@
 	$phone = get_field('phone', 'options');
 	$email = get_field('email', 'options');
 	$addr = get_field('addr', 'options');
+	$privacy = get_field('privacy_link', 'options');
 	$menu = wp_get_nav_sorted_menu_items('main');
 ?>
 		<footer class="part-footer">
@@ -63,7 +64,9 @@
 				<div class="part-footer__bottom">
 					<div class="part-footer__flex grid-flex grid-flex_justify-space-beetwen">
 						<div class="part-footer__info">2024 все права защищены</div>
-						<a class="part-footer__info" href="#">Политика конфиденциальности</a>
+						<?php if($privacy): ?>
+							<a class="part-footer__info" href="<?php echo get_the_permalink($privacy->ID) ?>">Политика конфиденциальности</a>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
