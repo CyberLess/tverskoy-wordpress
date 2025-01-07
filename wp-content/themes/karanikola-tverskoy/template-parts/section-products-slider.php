@@ -123,18 +123,26 @@ $listing_url = !empty($lising) ? get_the_permalink($lising->ID) : null;
 																	<img src="<?php echo $picture ?>" alt="" loading="lazy" />
 																</picture>
 															<?php endif; ?>
-															<span class="item-product-slider__button item-product-slider__button_desktop ui-button ui-button_circle-red ui-button_type_circle ui-button_size_circle-default">
+															<span class="item-product-slider__button item-product-slider__button_desktop ui-button ui-button_circle-red ui-button_type_circle ui-button_size_circle-default"><span class="ui-button__icon ui-button__icon_icon-arrow-2"><svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg></span></span>
+															<span class="item-product-slider__button item-product-slider__button_mobile ui-button ui-button_circle-gray-background ui-button_type_circle ui-button_size_circle-default">
+																<span class="ui-button__icon ui-button__icon_icon-map">
+																	<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-blue module-svg-icon module-svg-icon_icon-map" viewBox="0 0 20 20">
+																		<use href="#icon-map"></use>
+																	</svg>
+																</span>
+															</span>
+															<!-- <span class="item-product-slider__button item-product-slider__button_desktop ui-button ui-button_circle-red ui-button_type_circle ui-button_size_circle-default">
 																<span class="ui-button__icon ui-button__icon_icon-arrow-2">
 																	<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24">
 																		<use href="#icon-arrow-2"></use>
 																	</svg>
 																</span>
-															</span>
-															<span class="item-product-slider__button item-product-slider__button_mobile ui-button ui-button_circle-gray-background ui-button_type_circle ui-button_size_circle-default">
+															</span> -->
+															<!-- <span class="item-product-slider__button item-product-slider__button_mobile ui-button ui-button_circle-gray-background ui-button_type_circle ui-button_size_circle-default">
 																<span class="ui-button__icon ui-button__icon_icon-map">
 																	<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-blue module-svg-icon module-svg-icon_icon-map" viewBox="0 0 20 20"><use href="#icon-map"></use></svg>
 																</span>
-															</span>
+															</span> -->
 														</span>
 														<?php if($title): ?>
 															<span class="item-product-slider__title">

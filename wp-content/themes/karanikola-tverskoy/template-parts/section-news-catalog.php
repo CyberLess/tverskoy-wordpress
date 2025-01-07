@@ -72,13 +72,14 @@ $mainLink = getTplPageURL('template-pages/news.php');
 								<?php endif; ?>
 							</span>
 							<span class="part-banner__content-bottom">
-								<span class="part-banner__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default">
+								<span class="part-banner__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default"><span class="ui-button__icon ui-button__icon_icon-arrow-2"><svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg></span></span>
+								<!-- <span class="part-banner__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default">
 									<span class="ui-button__icon ui-button__icon_icon-arrow-2">
 										<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24">
 											<use href="#icon-arrow-2"></use>
 										</svg>
 									</span>
-								</span>
+								</span> -->
 							</span>
 						</span>
 					</span>
@@ -107,7 +108,10 @@ $mainLink = getTplPageURL('template-pages/news.php');
 				<div class="section-news-catalog__grid js-listing-body">
 					<?php foreach($posts as $post): ?>
 						<div class="section-news-catalog__col">
-							<?php get_template_part('template-parts/item-news', null, ['item' => $post]); ?>
+							<?php get_template_part('template-parts/item-news', null, [
+								'item' => $post,
+								'class' => 'section-news-catalog__item'
+							]); ?>
 						</div>
 					<?php endforeach; ?>
 				</div>

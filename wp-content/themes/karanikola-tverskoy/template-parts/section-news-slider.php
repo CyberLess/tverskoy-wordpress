@@ -24,7 +24,10 @@ $listing_url = !empty($lising) ? get_the_permalink($lising->ID) : null;
 				<div class="section-news-slider__slider-wrapper swiper-wrapper">
 					<?php foreach($posts as $post): ?>
 						<div class="section-news-slider__slide section-news-slider__slide_border-top swiper-slide">
-							<?php get_template_part('template-parts/item-news', null, ['item' => $post]); ?>
+							<?php get_template_part('template-parts/item-news', null, [
+								'item' => $post,
+								'class' => 'section-news-slider__item'
+							]); ?>
 						</div>
 					<?php endforeach; ?>
 				</div>

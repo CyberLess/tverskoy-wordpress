@@ -12,6 +12,16 @@ function add_module_to_tag_script($tag, $handle, $src){
 	$modules = [
 		'vendor-scripts',
 		'main-scripts',
+		'index-scripts',
+		'footer-scripts',
+		'events-scripts',
+		'news-scripts',
+		'contacts-scripts',
+		'events-catalog-scripts',
+		'products-catalog-rent-scripts',
+		'products-catalog-scripts',
+		'news-catalog-scripts',
+		'post-scripts'
 	];
 
 	if ( !in_array($handle, $modules) ) {

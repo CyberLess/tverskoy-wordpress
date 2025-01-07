@@ -6,9 +6,10 @@
 	$tags = wp_get_post_terms($item->ID, 'post_tag');
 	$excerpt = get_the_excerpt($item->ID);
 	$date = get_the_date('m.y', $item->ID);
+	$className = $args['class'] ?? 'section-news-catalog__item';
 ?>
 
-<a class="section-news-catalog__item item-news item-news_border-top" href="<?php echo $link ?>">
+<a class="<?php echo $className ?> item-news item-news_border-top" href="<?php echo $link ?>">
 	<span class="item-news__content">
 		<span class="item-news__content-top">
 			<span class="item-news__info">
@@ -32,13 +33,14 @@
 			<?php endif; ?>
 		</span>
 		<span class="item-news__content-bottom">
-			<span class="item-news__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default">
+			<span class="item-news__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default"><span class="ui-button__icon ui-button__icon_icon-arrow-2"><svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg></span></span>
+			<!-- <span class="item-news__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default">
 				<span class="ui-button__icon ui-button__icon_icon-arrow-2">
 					<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24">
 						<use href="#icon-arrow-2"></use>
 					</svg>
 				</span>
-			</span>
+			</span> -->
 		</span>
 	</span>
 </a>

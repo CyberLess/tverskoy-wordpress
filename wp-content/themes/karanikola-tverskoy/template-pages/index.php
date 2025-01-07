@@ -66,7 +66,7 @@ get_header();
 				<div class="section-about__decors-item"></div>
 				<div class="section-about__decors-item"></div>
 				<div class="section-about__decors-item"></div>
-				<picture class="section-about__decors-image module-photo"><img src="<?php echo IMAGES ?>/section-about-1.png" alt="photo" loading="lazy" /></picture>
+				<picture class="section-about__decors-image module-photo"><img src="<?php echo IMAGES ?>/section-about-1800.png" alt="photo" loading="lazy" /></picture>
 				<div class="section-about__decors-item"></div>
 				<div class="section-about__decors-item section-about__decors-item_border-radius"></div>
 				<div class="section-about__decors-item"></div>

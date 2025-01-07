@@ -27,11 +27,12 @@
 					<?php echo $excerpt ?>
 				</span>
 			</span>
-			<span class="item-product__button item-product__button_desktop ui-button ui-button_circle-purple ui-button_type_circle ui-button_size_circle-default">
+			<span class="item-product__button item-product__button_desktop ui-button ui-button_circle-purple ui-button_type_circle ui-button_size_circle-default" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"><span class="ui-button__icon ui-button__icon_icon-arrow-2"><svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-purple module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg></span></span>
+			<!-- <span class="item-product__button item-product__button_desktop ui-button ui-button_circle-purple ui-button_type_circle ui-button_size_circle-default">
 				<span class="ui-button__icon ui-button__icon_icon-arrow-2">
 					<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-purple module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg>
 				</span>
-			</span>
+			</span> -->
 		</span>
 		<span class="item-product__col item-product__col_right">
 			<?php if($picture): ?>

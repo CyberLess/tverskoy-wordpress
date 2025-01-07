@@ -1,4 +1,4 @@
-<?php /* Template Name: Каталог */ ?>
+<?php /* Template Name: Каталог Помещений */ ?>
 <?php
 get_header();
 // global $post;
@@ -8,7 +8,7 @@ get_header();
 	<?php get_template_part('/template-parts/section-products-catalog', null, [
 		'title' => $post->post_title,
 		'query' => [
-			'post_type' => 'institution',
+			'post_type' => 'premises',
 		]
 	]); ?>
 </main>

@@ -23,7 +23,10 @@ $total_pages = $query->max_num_pages;
 					<picture class="section-events-catalog__module-photo module-photo event-item-preview js-event-preview"></picture>
 					<?php foreach( $posts as $item ): ?>
 						<div class="section-events-catalog__col">
-							<?php get_template_part('template-parts/item-event', null, ['item' => $item]); ?>
+							<?php get_template_part('template-parts/item-event', null, [
+								'item' => $item,
+								'class' => 'section-events-catalog__item'
+							]); ?>
 						</div>
 					<? endforeach; ?>
 				</div>
