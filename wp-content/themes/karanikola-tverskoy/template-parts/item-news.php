@@ -7,10 +7,18 @@
 	$excerpt = get_the_excerpt($item->ID);
 	$date = get_the_date('m.y', $item->ID);
 	$className = $args['class'] ?? 'section-news-catalog__item';
+	$isBackground = $args['background'] ?? null;
+	$isBackgroundField = get_field('show_image_at_listing', $item->ID);
+	$currentBackground = $isBackground === null ? $isBackgroundField : $isBackground;
 ?>
 
-<a class="<?php echo $className ?> item-news item-news_border-top" href="<?php echo $link ?>">
-	<span class="item-news__content">
+<a class="<?php echo $className ?> item-news <?php if(!$currentBackground): ?>item-news_border-top<?php else: ?>item-news_height<?php endif; ?>" href="<?php echo $link ?>">
+	<?php if(!empty($currentBackground)): ?>
+		<picture class="item-news__image item-news__image_hidden-large-tablet module-photo">
+			<img class="image-source" src="<?php echo $picture ?>" alt="" loading="lazy">
+		</picture>
+	<?php endif; ?>
+	<span class="item-news__content <?php if(!empty($currentBackground)): ?>item-news__content_background<?php endif; ?>">
 		<span class="item-news__content-top">
 			<span class="item-news__info">
 				<?php foreach($tags as $key => $tag): ?>

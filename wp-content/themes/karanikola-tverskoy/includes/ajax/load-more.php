@@ -36,21 +36,20 @@ function call_load_more(){
 	$posts = $query->query($request);
 	$result['total_pages'] = $query->max_num_pages;
 
-	// var_dump([
-	// 	"request" => $request,
-	// 	"posts" => $posts
-	// ]);
-
 	if ($posts) {
 		foreach ($posts as $post) {
 			ob_start();
 			get_template_part("/template-parts/{$itemTemplate[$type]}", null, [
 				'item' => $post
 			]);
+
 			if ($type === 'events') {
 				$template = "<div class='section-events-catalog__col'>" . trim(ob_get_clean()) . "</div>";
 			} else if ($type === 'post') {
-				$template = "<div class='section-news-catalog__col'>" . trim(ob_get_clean()) . "</div>";
+				$isBackgroundField = get_field('show_image_at_listing', $post->ID);
+				$isBackgroundClass = $isBackgroundField ? "section-news-catalog__col_height" : "";
+
+				$template = "<div class='section-news-catalog__col {$isBackgroundClass}'>" . trim(ob_get_clean()) . "</div>";
 			} else {
 				$template = trim(ob_get_clean());
 			}

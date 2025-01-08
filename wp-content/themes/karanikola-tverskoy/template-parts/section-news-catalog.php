@@ -107,7 +107,11 @@ $mainLink = getTplPageURL('template-pages/news.php');
 			<?php if($posts): ?>
 				<div class="section-news-catalog__grid js-listing-body">
 					<?php foreach($posts as $post): ?>
-						<div class="section-news-catalog__col">
+						<?php
+							$isBackgroundField = get_field('show_image_at_listing', $post->ID);
+							$isBackgroundClass = $isBackgroundField ? "section-news-catalog__col_height" : "";
+						?>
+						<div class="section-news-catalog__col <?php echo $isBackgroundClass ?>">
 							<?php get_template_part('template-parts/item-news', null, [
 								'item' => $post,
 								'class' => 'section-news-catalog__item'
