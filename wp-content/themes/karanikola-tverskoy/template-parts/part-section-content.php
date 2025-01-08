@@ -8,10 +8,14 @@
 			<?php if( get_row_layout() == 'image' ): ?>
 				<?php
 					$image = get_sub_field('image');
+					$mobileImage = get_sub_field('mobile-image');
 				?>
 				<?php if($image): ?>
 					<div class="part-section-content__item">
 						<picture class="part-section-content__image module-photo">
+							<?php if($mobileImage): ?>
+								<source srcset="<? echo $mobileImage['sizes']['medium_large'] ?>" media="(max-width: 580px)" />
+							<?php endif; ?>
 							<img class="object-fit-cover" src="<? echo $image['sizes']['hd'] ?>" alt="<?php echo $image['alt'] ?>" loading="lazy" />
 						</picture>
 					</div>
