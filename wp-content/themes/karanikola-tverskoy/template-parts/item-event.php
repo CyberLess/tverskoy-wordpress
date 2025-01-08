@@ -7,8 +7,9 @@
 	$short_description = get_field('short_description', $item->ID);
 	$artist = get_field('artist', $item->ID);
 	$className = $args['class'] ?? 'section-events-catalog__item';
+	$isAjax = !empty($args['ajax']) ? 'is-loaded' : '';
 ?>
-<a class="<?php echo $className ?> item-event grid-flex grid-flex grid-flex_wrap js-event-item" href="<?php echo $link; ?>">
+<a class="<?php echo $className ?> <?php echo $isAjax ?> item-event grid-flex grid-flex grid-flex_wrap js-event-item" href="<?php echo $link; ?>">
 	<span class="item-event__col item-event__col_left grid-col grid-col_left">
 		<div class="item-event__date ui-title ui-title_default ui-title_color-gray ui-title_size-middle">
 			<?php echo $datetime['date']; ?>

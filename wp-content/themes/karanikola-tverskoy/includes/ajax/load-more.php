@@ -40,7 +40,8 @@ function call_load_more(){
 		foreach ($posts as $post) {
 			ob_start();
 			get_template_part("/template-parts/{$itemTemplate[$type]}", null, [
-				'item' => $post
+				'item' => $post,
+				'ajax' => true
 			]);
 
 			if ($type === 'events') {
