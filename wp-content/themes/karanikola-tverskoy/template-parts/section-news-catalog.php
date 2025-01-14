@@ -111,9 +111,9 @@ $mainLink = getTplPageURL('template-pages/news.php');
 							<div class="section-news-catalog__item item-news item-news_border-top item-news_skeleton">
 								<div class="item-news__content">
 									<div class="item-news__content-top">
-										<div class="item-news__info"><div class="item-news__info-item">&nbsp;</div></div>
-										<div class="item-news__title ui-title _">&nbsp;</div>
-										<div class="item-news__text">&nbsp;</div>
+										<div class="item-news__info"><div class="item-news__info-item is-skeleton">&nbsp;</div></div>
+										<div class="item-news__title ui-title _ is-skeleton">&nbsp;</div>
+										<div class="item-news__text is-skeleton">&nbsp;</div>
 									</div>
 								</div>
 							</div>

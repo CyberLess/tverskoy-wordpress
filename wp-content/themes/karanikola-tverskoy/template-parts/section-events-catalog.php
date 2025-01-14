@@ -22,13 +22,13 @@ $total_pages = $query->max_num_pages;
 				<input type="hidden" name="action" value="load_more">
 				<template id="skeleton">
 					<div class="section-events-catalog__col">
-						<div class="section-events-catalog__item item-event is-active item-event_skeleton grid-flex grid-flex grid-flex_wrap">
-							<div class="item-event__col item-event__col_left grid-col grid-col_left"><div class="item-event__title ui-title _">&nbsp;</div></div>
+						<div class="section-events-catalog__item item-event item-event_skeleton grid-flex grid-flex grid-flex_wrap">
+							<div class="item-event__col item-event__col_left grid-col grid-col_left"><div class="item-event__title ui-title _ is-skeleton">&nbsp;</div></div>
 							<div class="item-event__col item-event__col_right grid-col grid-col_right">
-								<div class="item-event__title ui-title _">&nbsp;</div>
-								<div class="item-event__text">&nbsp;</div>
-								<div class="item-event__author">&nbsp;</div>
-								<div class="item-event__time">&nbsp;</div>
+								<div class="item-event__title ui-title _ is-skeleton">&nbsp;</div>
+								<div class="item-event__text is-skeleton">&nbsp;</div>
+								<div class="item-event__author is-skeleton">&nbsp;</div>
+								<div class="item-event__time is-skeleton">&nbsp;</div>
 							</div>
 						</div>
 					</div>

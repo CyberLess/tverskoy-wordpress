@@ -68,24 +68,24 @@ $item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item
 			<input type="hidden" name="action" value="load_more">
 			<template id="skeleton">
 				<?php if($params['post_type'] === 'institution'): ?>
-					<div class="section-products-catalog__item item-product item-product_skeleton">
+					<div class="section-products-catalog__item item-product item-product_skeleton js-item-product" data-event="">
 						<div class="item-product__flex grid-flex grid-flex_justify-space-beetwen">
 							<div class="item-product__col item-product__col_left">
 								<div class="item-product__info">
-									<div class="item-product__title ui-title _">&nbsp;</div>
-									<div class="item-product__text">&nbsp;</div>
+									<div class="item-product__title ui-title _ is-skeleton is-skeleton is-skeleton_dirt">&nbsp;</div>
+									<div class="item-product__text is-skeleton is-skeleton is-skeleton_dirt">&nbsp;</div>
 								</div>
 							</div>
-							<div class="item-product__col item-product__col_right"><div class="item-product__image"></div></div>
+							<div class="item-product__col item-product__col_right is-skeleton is-skeleton is-skeleton_dirt"><div class="item-product__image"></div></div>
 						</div>
 					</div>
 				<?php else: ?>
-					<div class="section-products-catalog__item item-product item-product_skeleton js-item-product">
+					<div class="section-products-catalog__item item-product item-product_skeleton js-item-product" data-event="">
 						<div class="item-product__flex grid-flex grid-flex_justify-space-beetwen">
 							<div class="item-product__col item-product__col_left">
 								<div class="item-product__info">
-									<div class="item-product__title ui-title _">&nbsp;</div>
-									<div class="item-product__text">&nbsp;</div>
+									<div class="item-product__title ui-title _ is-skeleton is-skeleton is-skeleton_dirt">&nbsp;</div>
+									<div class="item-product__text is-skeleton is-skeleton is-skeleton_dirt">&nbsp;</div>
 								</div>
 							</div>
 						</div>
