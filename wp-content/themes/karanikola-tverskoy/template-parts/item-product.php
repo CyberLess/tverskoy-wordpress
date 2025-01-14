@@ -7,10 +7,11 @@
 	$floor = wp_get_post_terms($item->ID, 'floors')[0];
 	$scheme = get_field('scheme', $item->ID);
 	$excerpt = get_the_excerpt($item->ID);
+	$isAjax = !empty($args['ajax']) ? 'is-loaded' : '';
 ?>
 
 <a
-	class="section-products-catalog__item item-product js-item-product"
+	class="<?php echo $isAjax ?> section-products-catalog__item item-product js-item-product"
 	href="<?php echo $link ?>"
 	data-event="hover,click"
 	<?php if (!empty($floor)): ?>data-floor="<?php echo $floor->name ?>"<?php endif; ?>

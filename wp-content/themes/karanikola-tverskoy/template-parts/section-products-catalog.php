@@ -64,7 +64,35 @@ $item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item
 		<form action="<?php echo admin_url( "admin-ajax.php" ) ?>" data-scroll="true" class="section-products-catalog__col section-products-catalog__col_right grid-col grid-col_right js-listing">
 			<input type="hidden" name="page" value="1">
 			<input type="hidden" name="type" value="<?php echo $params['post_type']; ?>">
+			<input type="hidden" name="perPage" value="<?php echo get_option('posts_per_page'); ?>">
 			<input type="hidden" name="action" value="load_more">
+			<template id="skeleton">
+				<?php if($params['post_type'] === 'institution'): ?>
+					<div class="section-products-catalog__item item-product item-product_skeleton">
+						<div class="item-product__flex grid-flex grid-flex_justify-space-beetwen">
+							<div class="item-product__col item-product__col_left">
+								<div class="item-product__info">
+									<div class="item-product__title ui-title _">&nbsp;</div>
+									<div class="item-product__text">&nbsp;</div>
+								</div>
+							</div>
+							<div class="item-product__col item-product__col_right"><div class="item-product__image"></div></div>
+						</div>
+					</div>
+				<?php else: ?>
+					<div class="section-products-catalog__item item-product item-product_skeleton js-item-product">
+						<div class="item-product__flex grid-flex grid-flex_justify-space-beetwen">
+							<div class="item-product__col item-product__col_left">
+								<div class="item-product__info">
+									<div class="item-product__title ui-title _">&nbsp;</div>
+									<div class="item-product__text">&nbsp;</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php endif; ?>
+			</template>
+
 			<?php if($posts): ?>
 				<div class="section-products-catalog__items js-listing-body">
 					<?php foreach($posts as $post): ?>
