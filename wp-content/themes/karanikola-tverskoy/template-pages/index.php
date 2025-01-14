@@ -5,7 +5,7 @@ get_header();
 <?php
 	$addr = get_field('addr', 'options');
 ?>
-<main class="part-main-content
+<main class="part-main-content">
 	<section class="section-core section-core section-offer" props="{}">
 		<div class="section-offer__wrapper wrapper">
 			<div class="section-offer__flex grid-flex grid-flex_justify-center">
@@ -20,13 +20,23 @@ get_header();
 					<div class="section-offer__title-part">Y</div>
 				</div>
 				<div class="section-offer__decor">
-					<picture class="section-offer__decor-part section-offer__decor-part_main section-offer__decor-part_main-left module-photo"><img src="<?php echo IMAGES ?>/section-offer-1.png" alt="photo" loading="lazy" /></picture>
+					<div class="section-offer__decor-part section-offer__decor-part_main section-offer__decor-part_main-left module-video">
+						<video class="module-video__video" preload="metadata" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+							<source src="<?php echo ASSETS ?>/hero-1.mp4" type="video/mp4" />
+							<p>Ваш браузер не поддерживает встроенные видео. Попробуйте скачать его по<a href="<?php echo ASSETS ?>/hero-1.mp4">этой ссылке</a></p>
+						</video>
+					</div>
 					<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-left module-photo">
 						<img src="<?php echo IMAGES ?>/section-offer-2.png" alt="photo" loading="lazy" />
 					</picture>
 				</div>
 				<div class="section-offer__decor">
-					<picture class="section-offer__decor-part section-offer__decor-part_main section-offer__decor-part_main-right module-photo"><img src="<?php echo IMAGES ?>/section-offer-3.png" alt="photo" loading="lazy" /></picture>
+					<div class="section-offer__decor-part section-offer__decor-part_main section-offer__decor-part_main-right module-video">
+						<video class="module-video__video" preload="metadata" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+							<source src="<?php echo ASSETS ?>/hero-2.mp4" type="video/mp4" />
+							<p>Ваш браузер не поддерживает встроенные видео. Попробуйте скачать его по<a href="<?php echo ASSETS ?>/hero-2.mp4">этой ссылке</a></p>
+						</video>
+					</div>
 					<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-right module-photo">
 						<img src="<?php echo IMAGES ?>/section-offer-4.png" alt="photo" loading="lazy" />
 					</picture>
@@ -86,7 +96,12 @@ get_header();
 					</div>
 				</div>
 			</div>
-			<picture class="section-history__image module-photo"><img class="object-fit-cover" src="<?php echo IMAGES ?>/section-history-1.png" alt="photo" loading="lazy" /></picture>
+			<div class="section-history__image module-video">
+				<video class="module-video__video object-fit-cover" preload="metadata" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+					<source src="<?php echo ASSETS ?>/big.mp4" type="video/mp4" />
+					<p>Ваш браузер не поддерживает встроенные видео. Попробуйте скачать его по<a href="<?php echo ASSETS ?>/big.mp4">этой ссылке</a></p>
+				</video>
+			</div>
 		</div>
 	</section>
 	<?php get_template_part('/template-parts/section-products-slider', null, [
