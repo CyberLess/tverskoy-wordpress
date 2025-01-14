@@ -10,9 +10,10 @@
 	$isBackground = $args['background'] ?? null;
 	$isBackgroundField = get_field('show_image_at_listing', $item->ID);
 	$currentBackground = $isBackground === null ? $isBackgroundField : $isBackground;
+	$isAjax = !empty($args['ajax']) ? 'is-loaded' : '';
 ?>
 
-<a class="<?php echo $className ?> item-news <?php if(!$currentBackground): ?>item-news_border-top<?php else: ?>item-news_height<?php endif; ?>" href="<?php echo $link ?>">
+<a class="<?php echo $className ?> <?php echo $isAjax ?> item-news <?php if(!$currentBackground): ?>item-news_border-top<?php else: ?>item-news_height<?php endif; ?>" href="<?php echo $link ?>">
 	<?php if(!empty($currentBackground)): ?>
 		<picture class="item-news__image item-news__image_hidden-large-tablet module-photo">
 			<img class="image-source" src="<?php echo $picture ?>" alt="" loading="lazy">
