@@ -96,6 +96,13 @@
 			</div>
 		</div>
 	</div>
+	<?php
+		$tags = get_terms([
+			'taxonomy' => 'keywords_tag',
+			'hide_empty' => false,
+		]);
+
+	?>
 	<div class="modal fade" id="modal-product-filter" aria-hidden="true" role="dialog">
 		<div class="modal-dialog modal-dialog_position-bottom">
 			<div class="modal-content modal-content_background-gray modal-content_width-full modal-content_product">
@@ -110,48 +117,24 @@
 								<picture class="modal-content-filter__scheme module-photo"><img class="js-scheme-filter" src="src/assets/images/schemes/schemes-1.png" alt="photo" loading="lazy" /></picture>
 							</div>
 							<div class="modal-content-filter__middle">
-								<div class="modal-content-filter__items">
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-1.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Утренний Блин</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-2.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Кофешоп есть зерно</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-1.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Смузи и&nbsp;Фреши</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-2.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Завтрак на&nbsp;ходу</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-1.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Утренний Блин</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-2.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Кофешоп есть зерно</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-1.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Утренний Блин</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-2.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Кофешоп есть зерно</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-1.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Утренний Блин</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-2.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Кофешоп есть зерно</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-1.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Утренний Блин</span>
-									</label>
-									<label class="modal-content-filter__item js-filter-item" data-scheme="src/assets/images/schemes/schemes-2.png">
-										<input class="modal-content-filter__item-checkbox" type="checkbox" name="filter" /><span class="modal-content-filter__item-text">Кофешоп есть зерно</span>
-									</label>
-								</div>
+								<?php if($tags): ?>
+									<div class="modal-content-filter__items">
+										<?php foreach($tags as $tag): ?>
+											<label class="modal-content-filter__item">
+												<input class="modal-content-filter__item-checkbox" type="checkbox" value="<?php echo $tag->term_id; ?>" name="taxonomies[keywords_tag]"
+												form="filters-form"
+												/>
+												<span class="modal-content-filter__item-text"><?php echo $tag->name; ?></span>
+											</label>
+										<?php endforeach; ?>
+									</div>
+								<?php endif; ?>
 							</div>
 							<div class="modal-content-filter__bottom">
 								<button class="modal-content-filter__button modal-content-filter__button_clear ui-button ui-button_default ui-button_size_default"><span class="ui-button__text">Сбросить</span></button>
-								<button class="modal-content-filter__button modal-content-filter__button_submit ui-button ui-button_default ui-button_size_default"><span class="ui-button__text">Показать</span></button>
+								<button class="modal-content-filter__button modal-content-filter__button_submit ui-button ui-button_default ui-button_size_default" form="filters-form" data-bs-dismiss="modal">
+									<span class="ui-button__text">Показать</span>
+								</button>
 							</div>
 						</div>
 					</form>

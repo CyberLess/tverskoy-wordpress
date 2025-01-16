@@ -1,7 +1,7 @@
 <?php
 	$item = $args['item'];
 	$link = get_the_permalink($item->ID);
-	$picture = get_the_post_thumbnail_url( $item->ID, 'medium' );
+	$picture = get_the_post_thumbnail_url( $item->ID, 'medium_large' );
 	// $artist = get_field('artist', $item->ID);
 	$title = get_the_title($item->ID);
 	$floor = wp_get_post_terms($item->ID, 'floors')[0];

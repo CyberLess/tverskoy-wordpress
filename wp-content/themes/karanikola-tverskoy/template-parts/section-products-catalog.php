@@ -7,7 +7,7 @@ $floors = get_terms([
 $params = $args['query'] ?? [];
 $query = new WP_Query;
 $posts = $query->query(array_merge($params, [
-	"tax" => [
+	"tax_query" => [
 		[
 			'taxonomy' => 'floors',
 			'field' => 'id',
@@ -26,7 +26,7 @@ $item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item
 		</span>
 		<span class="ui-button__text">Фильтры</span>
 	</span>
-	<div class="section-products-catalog__flex grid-flex grid-flex_justify-space-beetwen">
+	<form id="filters-form" data-reset-submit="true" action="<?php echo admin_url( "admin-ajax.php" ) ?>" data-scroll="true" class="section-products-catalog__flex grid-flex grid-flex_justify-space-beetwen js-listing">
 		<div class="section-products-catalog__col section-products-catalog__col_left grid-col grid-col_left">
 			<div class="section-products-catalog__flex grid-flex grid-flex_wrap grid-flex_justify-space-beetwen">
 				<?php if($title): ?>
@@ -42,11 +42,10 @@ $item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item
 				<?php if($floors): ?>
 					<div class="ui-group-buttons__flex grid-flex grid-flex_width-full">
 						<?php foreach($floors as $index => $floor): ?>
-							<a class="ui-group-buttons__button ui-button ui-button_type_purple-border ui-button_size_middle <?php if($index === 0): ?>ui-button_type_purple-border-active<?php endif; ?>" href="<?php echo get_term_link($floor); ?>">
-								<span class="ui-button__text">
-									<?php echo $floor->name; ?>
-								</span>
-							</a>
+							<label class="ui-group-buttons__item ui-checkbox js-update-label" data-to-selector=".section-products-catalog__floor">
+								<input class="ui-checkbox__checkbox" type="radio" value="<?php echo $floor->term_id; ?>" name="taxonomies[floors]" <?php if($index === 0): ?>checked="checked"<?php endif; ?> />
+								<span class="ui-checkbox__text"><?php echo $floor->name; ?></span>
+							</label>
 						<?php endforeach; ?>
 					</div>
 				<?php endif; ?>
@@ -61,7 +60,7 @@ $item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item
 				<?php endif; ?>
 			</picture>
 		</div>
-		<form action="<?php echo admin_url( "admin-ajax.php" ) ?>" data-scroll="true" class="section-products-catalog__col section-products-catalog__col_right grid-col grid-col_right js-listing">
+		<div class="section-products-catalog__col section-products-catalog__col_right grid-col grid-col_right">
 			<input type="hidden" name="page" value="1">
 			<input type="hidden" name="type" value="<?php echo $params['post_type']; ?>">
 			<input type="hidden" name="perPage" value="<?php echo get_option('posts_per_page'); ?>">
@@ -100,6 +99,6 @@ $item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item
 					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
-		</form>
-	</div>
+		</div>
+	</form>
 </section>
