@@ -112,11 +112,11 @@
 					</button>
 					<form class="modal__filter modal-content-filter">
 						<div class="modal-content-filter__flex grid-flex grid-flex_direction-column grid-flex_justify-space-between">
-							<div class="modal-content-filter__top">
+							<!-- <div class="modal-content-filter__top">
 								<div class="modal-content-filter__title">ресторан</div>
 								<picture class="modal-content-filter__scheme module-photo"><img class="js-scheme-filter" src="src/assets/images/schemes/schemes-1.png" alt="photo" loading="lazy" /></picture>
-							</div>
-							<div class="modal-content-filter__middle">
+							</div> -->
+							<div class="modal-content-filter__middle" id="modal-filter-container">
 								<?php if($tags): ?>
 									<div class="modal-content-filter__items">
 										<?php foreach($tags as $tag): ?>
@@ -131,7 +131,9 @@
 								<?php endif; ?>
 							</div>
 							<div class="modal-content-filter__bottom">
-								<button class="modal-content-filter__button modal-content-filter__button_clear ui-button ui-button_default ui-button_size_default"><span class="ui-button__text">Сбросить</span></button>
+								<button class="modal-content-filter__button modal-content-filter__button_clear ui-button ui-button_default ui-button_size_default" form="filters-form" data-reset-container="#modal-filter-container" data-bs-dismiss="modal">
+									<span class="ui-button__text">Сбросить</span>
+								</button>
 								<button class="modal-content-filter__button modal-content-filter__button_submit ui-button ui-button_default ui-button_size_default" form="filters-form" data-bs-dismiss="modal">
 									<span class="ui-button__text">Показать</span>
 								</button>
