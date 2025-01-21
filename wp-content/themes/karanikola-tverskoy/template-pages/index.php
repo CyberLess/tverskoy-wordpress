@@ -33,12 +33,22 @@ get_header();
 		'video' => get_field('history_video'),
 	]); ?>
 
-	<?php get_template_part('/template-parts/section-products-slider', null, [
-		'query' => [
-			'post_type' => 'events',
-			'posts_per_page' => 4
-		]
-	]); ?>
+	<?php
+		$favorites = get_field('favorite');
+	?>
+	<?php if(!empty($favorites)): ?>
+		<?php get_template_part('/template-parts/section-products-slider', null, [
+			'posts' => $favorites
+		]); ?>
+	<?php else: ?>
+		<?php get_template_part('/template-parts/section-products-catalog', null, [
+			'title' => 'Аренда помещений',
+			'query' => [
+				'post_type' => 'premises',
+			]
+		]); ?>
+	<?php endif; ?>
+
 	<?php get_template_part('/template-parts/section-events-slider', null, [
 		'query' => [
 			'post_type' => 'events',
