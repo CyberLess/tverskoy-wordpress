@@ -2,66 +2,12 @@
 <?php
 get_header();
 ?>
-<?php
-	$addr = get_field('addr', 'options');
-?>
 <main class="part-main-content">
-	<section class="section-core section-core section-offer" props="{}">
-		<div class="section-offer__wrapper wrapper">
-			<div class="section-offer__flex grid-flex grid-flex_justify-center">
-				<div class="section-offer__title grid-flex grid-flex_justify-space-beetwen">
-					<div class="section-offer__title-part">T</div>
-					<div class="section-offer__title-part">V</div>
-					<div class="section-offer__title-part">E</div>
-					<div class="section-offer__title-part">R</div>
-					<div class="section-offer__title-part">S</div>
-					<div class="section-offer__title-part">K</div>
-					<div class="section-offer__title-part">O</div>
-					<div class="section-offer__title-part">Y</div>
-				</div>
-				<div class="section-offer__decor">
-					<div class="section-offer__decor-part section-offer__decor-part_main section-offer__decor-part_main-left module-video">
-						<video class="module-video__video" preload="metadata" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
-							<source src="<?php echo ASSETS ?>/hero-1.mp4" type="video/mp4" />
-							<p>Ваш браузер не поддерживает встроенные видео. Попробуйте скачать его по<a href="<?php echo ASSETS ?>/hero-1.mp4">этой ссылке</a></p>
-						</video>
-					</div>
-					<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-left module-photo">
-						<img src="<?php echo IMAGES ?>/section-offer-2.png" alt="photo" loading="lazy" />
-					</picture>
-				</div>
-				<div class="section-offer__decor">
-					<div class="section-offer__decor-part section-offer__decor-part_main section-offer__decor-part_main-right module-video">
-						<video class="module-video__video" preload="metadata" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
-							<source src="<?php echo ASSETS ?>/hero-2.mp4" type="video/mp4" />
-							<p>Ваш браузер не поддерживает встроенные видео. Попробуйте скачать его по<a href="<?php echo ASSETS ?>/hero-2.mp4">этой ссылке</a></p>
-						</video>
-					</div>
-					<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-right module-photo">
-						<img src="<?php echo IMAGES ?>/section-offer-4.png" alt="photo" loading="lazy" />
-					</picture>
-				</div>
-			</div>
-			<div class="section-offer__bottom">
-				<div class="section-offer__flex grid-flex grid-flex_justify-space-beetwen grid-flex_vertical-center">
-					<div class="section-offer__info">
-						Гастрономический <br />
-						кластер в&nbsp;центре Москвы
-					</div>
-					<div class="section-offer__trigger grid-flex grid-flex_justify-center">
-						<svg class="section-offer__trigger-icon module-svg-icon module-svg-icon_icon-arrow" viewBox="0, 0, 10, 14"><use href="#icon-arrow"></use></svg>
-					</div>
-					<?php if($addr): ?>
-						<div class="section-offer__info">
-							Адрес кластера: <br />
-							<?php echo $addr; ?>
-						</div>
-					<?php endif; ?>
-
-				</div>
-			</div>
-		</div>
-	</section>
+	<?php get_template_part('/template-parts/section-offer', null, [
+		'video1' => get_field('hello_first_video'),
+		'video2' => get_field('hello_second_video'),
+		'addr' => get_field('addr', 'options')
+	]); ?>
 	<section class="section-core section-core section-about" props="{}">
 		<div class="section-about__wrapper wrapper">
 			<div class="section-about__title ui-title ui-title_default ui-title_color-gray ui-title_size-small">О кластере</div>
@@ -83,27 +29,10 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="section-core section-core section-history" props="{}">
-		<div class="section-history__wrapper wrapper">
-			<div class="section-history__flex grid-flex grid-flex_wrap">
-				<div class="section-history__col section-history__col_left grid-col grid-col_left"><div class="section-history__title ui-title ui-title_default ui-title_color-purple ui-title_size-default">Новая история</div></div>
-				<div class="section-history__col section-history__col_right grid-col grid-col_right">
-					<div class="section-history__subtitle ui-title ui-title_default ui-title_color-purple ui-title_size-middle">Усадьба Салтыкова</div>
-					<div class="section-history__text">
-						Особняк XVIII века был бережно реконструирован <br />
-						и&nbsp;подарил исторические стены для&nbsp;гастрокластера TVERSKOY. <br />
-						Более 17 000 м² полностью посвятили еде — и&nbsp;вы можете стать частью нового гастрономического мира в&nbsp;центре Москвы.
-					</div>
-				</div>
-			</div>
-			<div class="section-history__image module-video">
-				<video class="module-video__video object-fit-cover" preload="metadata" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
-					<source src="<?php echo ASSETS ?>/big.mp4" type="video/mp4" />
-					<p>Ваш браузер не поддерживает встроенные видео. Попробуйте скачать его по<a href="<?php echo ASSETS ?>/big.mp4">этой ссылке</a></p>
-				</video>
-			</div>
-		</div>
-	</section>
+	<?php get_template_part('/template-parts/section-history', null, [
+		'video' => get_field('history_video'),
+	]); ?>
+
 	<?php get_template_part('/template-parts/section-products-slider', null, [
 		'query' => [
 			'post_type' => 'events',
