@@ -17,9 +17,9 @@ function add_theme_resources () {
 
 	if ( is_page_template( 'template-pages/index.php' ) ) {
 		wp_enqueue_script( 'index-scripts', ASSETS . '/scripts/index.pug.js', null, null, false );
-		wp_enqueue_script( 'footer-scripts', ASSETS . '/scripts/footer.js', null, null, false );
-		wp_enqueue_script( 'events-scripts', ASSETS . '/scripts/events.js', null, null, false );
-		wp_enqueue_script( 'news-scripts', ASSETS . '/scripts/news.js', null, null, false );
+		// wp_enqueue_script( 'footer-scripts', ASSETS . '/scripts/footer.js', null, null, false );
+		// wp_enqueue_script( 'events-scripts', ASSETS . '/scripts/events.js', null, null, false );
+		// wp_enqueue_script( 'news-scripts', ASSETS . '/scripts/news.js', null, null, false );
 	}
 
 	if ( is_page_template( 'template-pages/contacts.php' ) ) {

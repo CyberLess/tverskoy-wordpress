@@ -51,12 +51,12 @@ $item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item
 				<?php endif; ?>
 			</div>
 			<picture class="section-products-catalog__schemes module-photo">
-				<?php if($posts[0]): ?>
+				<?php if(!empty($posts[0])): ?>
 					<?php
 						$item = $posts[0];
 						$scheme = get_field('scheme', $item->ID);
 					?>
-					<img class="js-scheme-main" src="<?php echo $scheme['sizes']['large'] ?>" alt="" loading="lazy" />
+					<img class="js-scheme-main" src="<?php if (!empty($scheme['sizes']['large'])) { echo $scheme['sizes']['large']; } ?>" alt="" loading="lazy" />
 				<?php endif; ?>
 			</picture>
 		</div>

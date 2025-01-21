@@ -13,19 +13,27 @@ get_header();
 			<div class="section-about__title ui-title ui-title_default ui-title_color-gray ui-title_size-small">О кластере</div>
 			<div class="section-about__line"></div>
 			<div class="section-about__text">
-				<span class="section-about__text-part section-about__text-part_gray">Добро пожаловать в&nbsp;TVERSKOY —гастрономический кластер</span>
+				<span class="section-about__text-part section-about__text-part_gray">Добро пожаловать в&nbsp;TVERSKOY — гастрономический кластер в&nbsp;центре Москвы, </span>
 				<span class="section-about__text-part section-about__text-part_default">
-					в&nbsp;центре Москвы, где традиции встречаются с&nbsp;современностью. Откройте для&nbsp;себя уникальные блюда, атмосферу и&nbsp;виды на&nbsp;Тверской бульвар.
+					где традиции встречаются с&nbsp;современностью. Откройте для&nbsp;себя уникальные блюда в&nbsp;атмосфере изысканной кухни с&nbsp;роскошными видами на&nbsp;Тверской бульвар.
 				</span>
 			</div>
-			<div class="section-about__decors grid-flex grid-flex_justify-center grid-flex_vertical-bottom">
-				<div class="section-about__decors-item"></div>
-				<div class="section-about__decors-item"></div>
-				<div class="section-about__decors-item"></div>
-				<picture class="section-about__decors-image module-photo"><img src="<?php echo IMAGES ?>/section-about-1800.png" alt="photo" loading="lazy" /></picture>
-				<div class="section-about__decors-item"></div>
-				<div class="section-about__decors-item section-about__decors-item_border-radius"></div>
-				<div class="section-about__decors-item"></div>
+			<div class="section-about__diving">
+				<div class="section-about__decors grid-flex grid-flex_justify-center grid-flex_vertical-bottom">
+					<div class="section-about__decors-item"></div>
+					<div class="section-about__decors-item"></div>
+					<div class="section-about__decors-item"></div>
+					<div class="section-about__diving-image">
+						<picture class="section-about__decors-image module-photo"><img src="<?php echo IMAGES ?>/section-about-1800.png" alt="photo" loading="lazy" /></picture>
+					</div>
+					<div class="section-about__decors-item"></div>
+					<div class="section-about__decors-item section-about__decors-item_border-radius"></div>
+					<div class="section-about__decors-item"></div>
+				</div>
+				<div class="section-about__diving-text section-about__diving-text--1">Формат гастрокластера полностью переосмыслен благодаря необычным материалам отделки и&nbsp;передвижным декорациям на&nbsp;каждом этаже.</div>
+				<div class="section-about__diving-text section-about__diving-text--2">
+					Пространство нового foodspace меняется несколько раз в&nbsp;день, дизайнерские детали, графика, современные скульптуры создают неповторимую атмосферу театральности.
+				</div>
 			</div>
 		</div>
 	</section>
