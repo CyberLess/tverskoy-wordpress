@@ -9,14 +9,17 @@
 	$artist = get_field('artist');
 	$link = get_field('link');
 	$title = "{$artist} /  {$datetimeFull['date']}";
+
+	$lising = get_field('events_listing', 'options');
+	$listing_url = !empty($lising) ? get_the_permalink($lising->ID) : null;
 ?>
 <section class="section-core section-core section-events-single" props="{}">
 	<div class="section-events-single__wrapper wrapper">
 		<div class="section-events-single__header part-section-header">
-			<a class="part-section-header__prev" href="#">
-				<svg class="part-section-header__prev-icon module-svg-icon module-svg-icon_icon-arrow" viewBox="0 0 16 16"><use href="#icon-arrow"></use></svg>
-				<div class="part-section-header__prev-text">Назад</div>
-			</a>
+			<?php get_template_part('/template-parts/button-back', null, [
+				'url' => $listing_url,
+			]); ?>
+
 			<?php if($title): ?>
 				<div class="section-events-single__title ui-title ui-title_default ui-title_color-gray ui-title_size-default">
 					<?php echo $title; ?>

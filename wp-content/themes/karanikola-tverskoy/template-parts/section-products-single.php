@@ -6,14 +6,16 @@
 	$sitelink = get_field('sitelink');
 	$gallery = get_field('gallery');
 	$domain = getDomainFromUrl($sitelink);
+
+	$lising = get_field('institutions_listing', 'options');
+	$listing_url = !empty($lising) ? get_the_permalink($lising->ID) : null;
 ?>
 <section class="section-core section-core section-products-single" props="{}">
 	<div class="section-products-single__wrapper wrapper">
 		<div class="section-products-single__header part-section-header">
-			<a class="part-section-header__prev" href="#">
-				<svg class="part-section-header__prev-icon module-svg-icon module-svg-icon_icon-arrow" viewBox="0 0 16 16"><use href="#icon-arrow"></use></svg>
-				<div class="part-section-header__prev-text">Назад</div>
-			</a>
+			<?php get_template_part('/template-parts/button-back', null, [
+				'url' => $listing_url,
+			]); ?>
 			<?php if($title): ?>
 				<div class="section-products-single__title ui-title ui-title_default ui-title_color-gray ui-title_size-big">
 					<?php echo $title; ?>

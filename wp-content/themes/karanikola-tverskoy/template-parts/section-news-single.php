@@ -3,6 +3,9 @@
 	$title = get_the_title();
 	$date = get_the_date('m.y');
 	$tags = wp_get_post_terms($post->ID, 'post_tag');
+
+	$lising = get_field('news_listing', 'options');
+	$listing_url = !empty($lising) ? get_the_permalink($lising->ID) : null;
 ?>
 
 <section class="section-core section-core section-news-single js-fixed-element-section" props="{}">
@@ -16,10 +19,9 @@
 			</a>
 		</div>
 		<div class="section-news-single__header part-section-header">
-			<a class="part-section-header__prev" href="#">
-				<svg class="part-section-header__prev-icon module-svg-icon module-svg-icon_icon-arrow" viewBox="0 0 16 16"><use href="#icon-arrow"></use></svg>
-				<div class="part-section-header__prev-text">Назад</div>
-			</a>
+			<?php get_template_part('/template-parts/button-back', null, [
+				'url' => $listing_url,
+			]); ?>
 			<div class="section-news-single__flex grid-flex grid-flex_wrap grid-flex_justify-space-beetwen">
 				<?php if($title): ?>
 					<div class="section-news-single__col section-news-single__col_width-full">
