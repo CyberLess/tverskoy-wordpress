@@ -27,6 +27,13 @@ $addr = $args['addr'];
 						<img src="<?php echo IMAGES ?>/section-offer-2.png" alt="photo" loading="lazy" />
 					</picture>
 				</div>
+			<?php else: ?>
+				<div class="section-offer__decor">
+					<picture class="section-offer__decor-part section-offer__decor-part_main section-offer__decor-part_main-left module-photo"><img src="<?php echo IMAGES ?>/section-offer-1.png" alt="photo" loading="lazy" /></picture>
+					<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-left module-photo">
+						<img src="<?php echo IMAGES ?>/section-offer-2.png" alt="photo" loading="lazy" />
+					</picture>
+				</div>
 			<?php endif; ?>
 			<?php if($video2): ?>
 				<div class="section-offer__decor">
@@ -35,6 +42,13 @@ $addr = $args['addr'];
 							<source src="<?php echo $video2['url'] ?>" type="<?php echo $video2['mime_type'] ?>" />
 						</video>
 					</div>
+					<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-right module-photo">
+						<img src="<?php echo IMAGES ?>/section-offer-4.png" alt="photo" loading="lazy" />
+					</picture>
+				</div>
+			<?php else: ?>
+				<div class="section-offer__decor">
+					<picture class="section-offer__decor-part section-offer__decor-part_main section-offer__decor-part_main-right module-photo"><img src="<?php echo IMAGES ?>/section-offer-3.png" alt="photo" loading="lazy" /></picture>
 					<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-right module-photo">
 						<img src="<?php echo IMAGES ?>/section-offer-4.png" alt="photo" loading="lazy" />
 					</picture>

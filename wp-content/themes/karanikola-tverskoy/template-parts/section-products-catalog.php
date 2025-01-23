@@ -20,13 +20,15 @@ $item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item
 ?>
 
 <section class="section-core section-core section-products-catalog js-fixed-element-section" props="{}">
-	<span class="section-products-catalog__filter ui-button ui-button_type_blue ui-button_size_default js-fixed-element" data-bs-toggle="modal" data-bs-target="#modal-product-filter">
-		<span class="ui-button__icon ui-button__icon_icon-filter">
-			<svg class="ui-button__icon ui-button__icon_default module-svg-icon module-svg-icon_icon-filter" viewBox="0 0 16 16"><use href="#icon-filter"></use></svg>
+	<?php if($params['post_type'] === 'institution' ): ?>
+		<span class="section-products-catalog__filter ui-button ui-button_type_blue ui-button_size_default js-fixed-element" data-bs-toggle="modal" data-bs-target="#modal-product-filter">
+			<span class="ui-button__icon ui-button__icon_icon-filter">
+				<svg class="ui-button__icon ui-button__icon_default module-svg-icon module-svg-icon_icon-filter" viewBox="0 0 16 16"><use href="#icon-filter"></use></svg>
+			</span>
+			<span class="ui-button__text">Фильтры</span>
 		</span>
-		<span class="ui-button__text">Фильтры</span>
-	</span>
-	<form id="filters-form" data-reset-submit="true" action="<?php echo admin_url( "admin-ajax.php" ) ?>" data-scroll="true" class="section-products-catalog__flex grid-flex grid-flex_justify-space-beetwen js-listing">
+	<?php endif; ?>
+	<form id="filters-form" data-reset-submit="true" action="<?php echo admin_url( "admin-ajax.php" ) ?>" <?php if(empty($params['posts_per_page'])): ?>data-scroll="true"<?php endif; ?>  class="section-products-catalog__flex grid-flex grid-flex_justify-space-beetwen js-listing">
 		<div class="section-products-catalog__col section-products-catalog__col_left grid-col grid-col_left">
 			<div class="section-products-catalog__flex grid-flex grid-flex_wrap grid-flex_justify-space-beetwen">
 				<?php if($title): ?>
@@ -63,7 +65,11 @@ $item_template = $params['post_type'] === 'institution' ? 'item-product' : 'item
 		<div class="section-products-catalog__col section-products-catalog__col_right grid-col grid-col_right">
 			<input type="hidden" name="page" value="1">
 			<input type="hidden" name="type" value="<?php echo $params['post_type']; ?>">
-			<input type="hidden" name="perPage" value="<?php echo get_option('posts_per_page'); ?>">
+			<?php if(!empty($params['posts_per_page'])): ?>
+				<input type="hidden" name="perPage" value="<?php echo $params['posts_per_page']; ?>">
+			<?php else: ?>
+				<input type="hidden" name="perPage" value="<?php echo get_option('posts_per_page'); ?>">
+			<?php endif; ?>
 			<input type="hidden" name="action" value="load_more">
 			<template id="skeleton">
 				<?php if($params['post_type'] === 'institution'): ?>

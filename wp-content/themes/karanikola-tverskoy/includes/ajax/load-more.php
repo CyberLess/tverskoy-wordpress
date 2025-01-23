@@ -6,6 +6,7 @@ function call_load_more(){
 	$taxonomies = $_POST['taxonomies'];
 	$type = $_POST['type'] ?? "post";
 	$page = $_POST['page'] ?? 1;
+	$perPage = !empty($_POST['perPage']) ? (int) $_POST['perPage'] : get_option('posts_per_page');
 	$result = [
 		"list" => [],
 		"total_pages" => 0
@@ -13,6 +14,7 @@ function call_load_more(){
 	$request = [
 		"post_type" => $type,
 		'paged' => $page,
+		'posts_per_page' => $perPage
 	];
 	$itemTemplate = [
 		"events" => "item-event",

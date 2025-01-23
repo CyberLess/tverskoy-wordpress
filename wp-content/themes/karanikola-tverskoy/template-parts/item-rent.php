@@ -11,9 +11,8 @@
 ?>
 
 <a
-	class="<?php echo $isAjax ?> section-products-catalog__item item-product js-item-product"
+	class="<?php echo $isAjax ?> section-products-catalog__item item-product"
 	href="#"
-	data-event="hover,click"
 	data-bs-toggle="modal"
 	data-bs-target="#modal-rent"
 	<?php if (!empty($floor)): ?>data-floor="<?php echo $floor->name ?>"<?php endif; ?>

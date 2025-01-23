@@ -14,9 +14,7 @@ get_header();
 			<div class="section-about__line"></div>
 			<div class="section-about__text">
 				<span class="section-about__text-part section-about__text-part_gray">Добро пожаловать в&nbsp;TVERSKOY — гастрономический кластер в&nbsp;центре Москвы, </span>
-				<span class="section-about__text-part section-about__text-part_default">
-					где традиции встречаются с&nbsp;современностью. Откройте для&nbsp;себя уникальные блюда в&nbsp;атмосфере изысканной кухни с&nbsp;роскошными видами на&nbsp;Тверской бульвар.
-				</span>
+				<span class="section-about__text-part section-about__text-part_default">где традиции встречаются с&nbsp;современностью. Откройте для&nbsp;себя уникальные блюда в&nbsp;атмосфере изысканной кухни с&nbsp;роскошными видами на&nbsp;Тверской бульвар.</span>
 			</div>
 			<div class="section-about__diving">
 				<div class="section-about__decors grid-flex grid-flex_justify-center grid-flex_vertical-bottom">
@@ -31,9 +29,7 @@ get_header();
 					<div class="section-about__decors-item"></div>
 				</div>
 				<div class="section-about__diving-text section-about__diving-text--1">Формат гастрокластера полностью переосмыслен благодаря необычным материалам отделки и&nbsp;передвижным декорациям на&nbsp;каждом этаже.</div>
-				<div class="section-about__diving-text section-about__diving-text--2">
-					Пространство нового foodspace меняется несколько раз в&nbsp;день, дизайнерские детали, графика, современные скульптуры создают неповторимую атмосферу театральности.
-				</div>
+				<div class="section-about__diving-text section-about__diving-text--2">Пространство нового foodspace меняется несколько раз в&nbsp;день, дизайнерские детали, графика, современные скульптуры создают неповторимую атмосферу театральности.</div>
 			</div>
 		</div>
 	</section>
@@ -53,6 +49,7 @@ get_header();
 			'title' => 'Аренда помещений',
 			'query' => [
 				'post_type' => 'premises',
+				'posts_per_page' => 6
 			]
 		]); ?>
 	<?php endif; ?>
@@ -60,7 +57,7 @@ get_header();
 	<?php get_template_part('/template-parts/section-events-slider', null, [
 		'query' => [
 			'post_type' => 'events',
-			'posts_per_page' => 4
+			'posts_per_page' => 2
 		]
 	]); ?>
 	<?php get_template_part('/template-parts/section-news-slider', null, [

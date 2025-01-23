@@ -86,9 +86,9 @@
 								</span>
 							</div>
 							<div class="modal-content-product__flex-col">
-								<button class="modal-content-product__button modal-content-product__button_submit ui-button ui-button_default ui-button_type_blue ui-button_size_default">
+								<a href="#" class="modal-content-product__button modal-content-product__button_submit ui-button ui-button_default ui-button_type_blue ui-button_size_default js-modal-product-link">
 									<span class="ui-button__text">Подробнее</span>
-								</button>
+								</a>
 							</div>
 						</div>
 					</div>
