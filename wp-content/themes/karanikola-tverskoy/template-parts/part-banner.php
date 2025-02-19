@@ -11,7 +11,7 @@
 <?php if($permalink): ?>
 	<a class="<?php echo $class ?> part-banner" href="<?php echo $permalink ?>">
 <?php else: ?>
-	<div class="<?php echo $class ?> part-banner">
+	<div class="<?php echo $class ?> part-banner" data-bs-toggle="modal" data-bs-target="#modal-callback">
 <?php endif; ?>
 	<span class="part-banner__flex grid-flex grid-flex_wrap">
 		<span class="part-banner__col part-banner__col_left">
