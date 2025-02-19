@@ -43,55 +43,15 @@ $mainLink = getTplPageURL('template-pages/news.php');
 			<?php endif; ?>
 		</div>
 		<?php if($banner): ?>
-			<?php
-				$permalink = get_the_permalink($banner->ID);
-				$title = get_the_title($banner->ID);
-				$excerpt = get_the_excerpt($banner->ID);
-				$picture = get_the_post_thumbnail_url($banner->ID, 'large');
-				$tags = wp_get_post_terms($banner->ID, 'post_tag');
-				$date = get_the_date('m.y', $banner->ID);
-			?>
-			<a class="section-news-catalog__banner part-banner" href="<?php echo $permalink ?>">
-				<span class="part-banner__flex grid-flex grid-flex_wrap">
-					<span class="part-banner__col part-banner__col_left">
-						<span class="part-banner__content">
-							<span class="part-banner__content-top">
-								<span class="part-banner__info">
-									<?php if($tags): ?>
-										<?php foreach($tags as $tag): ?>
-											<span class="part-banner__info-item"><?php echo $tag->name; ?></span>
-										<?php endforeach; ?>
-									<?php endif; ?>
-									<span class="part-banner__info-item"><?php echo $date; ?></span>
-								</span>
-								<?php if($title): ?>
-									<span class="part-banner__title"><?php echo $title; ?></span>
-								<?php endif; ?>
-								<?php if($excerpt): ?>
-									<span class="part-banner__text"><?php echo $excerpt; ?> </span>
-								<?php endif; ?>
-							</span>
-							<span class="part-banner__content-bottom">
-								<span class="part-banner__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default"><span class="ui-button__icon ui-button__icon_icon-arrow-2"><svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24"><use href="#icon-arrow-2"></use></svg></span></span>
-								<!-- <span class="part-banner__button ui-button ui-button_circle-gray ui-button_type_circle ui-button_size_circle-default">
-									<span class="ui-button__icon ui-button__icon_icon-arrow-2">
-										<svg class="ui-button__icon ui-button__icon_circle ui-button__icon_circle-gray module-svg-icon module-svg-icon_icon-arrow-2" viewBox="0 0 24 24">
-											<use href="#icon-arrow-2"></use>
-										</svg>
-									</span>
-								</span> -->
-							</span>
-						</span>
-					</span>
-					<span class="part-banner__col part-banner__col_right">
-						<?php if($picture): ?>
-							<picture class="part-banner__image module-photo">
-								<img class="object-fit-cover" src="<?php echo $picture ?>" alt="" loading="lazy" />
-							</picture>
-						<?php endif; ?>
-					</span>
-				</span>
-			</a>
+			<?php get_template_part('/template-parts/part-banner', null, [
+				'permalink' => get_the_permalink($banner->ID),
+				'title' => get_the_title($banner->ID),
+				'excerpt' => get_the_excerpt($banner->ID),
+				'picture' => get_the_post_thumbnail_url($banner->ID, 'large'),
+				'tags' => wp_get_post_terms($banner->ID, 'post_tag'),
+				'date' => get_the_date('m.y', $banner->ID),
+				'class' => "section-news-catalog__banner"
+			]); ?>
 		<?php endif; ?>
 
 		<form action="<?php echo admin_url( "admin-ajax.php" ) ?>" class="section-news-catalog__main part-section-main js-listing">
