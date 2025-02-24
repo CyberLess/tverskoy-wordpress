@@ -1,0 +1,1 @@
+import{N as t,g as a,t as e,a as n}from"./index-page2.js";new t(".section-news-catalog");a.from(".section-news-catalog__group-buttons div>*",{yPercent:100,opacity:0,delay:.6,stagger:.1});e(".part-banner__title",0,{start:"top 90%",trigger:".part-banner__title"});n(".part-banner__text",.5,{start:"top 90%",trigger:".part-banner__text"});

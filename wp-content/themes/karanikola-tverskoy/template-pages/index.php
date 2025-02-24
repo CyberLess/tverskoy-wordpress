@@ -6,7 +6,8 @@ get_header();
 	<?php get_template_part('/template-parts/section-offer', null, [
 		'video1' => get_field('hello_first_video'),
 		'video2' => get_field('hello_second_video'),
-		'addr' => get_field('addr', 'options')
+		'addr' => get_field('addr', 'options'),
+		'addr_url' => get_field('addr_url', 'options'),
 	]); ?>
 	<section class="section-core section-core section-about" props="{}">
 		<div class="section-about__wrapper wrapper">
