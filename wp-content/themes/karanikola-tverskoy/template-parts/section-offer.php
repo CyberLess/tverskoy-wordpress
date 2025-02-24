@@ -3,6 +3,7 @@ $video1 = $args['video1'];
 $video2 = $args['video2'];
 $addr = $args['addr'];
 $addr_url = $args['addr_url'];
+$hide_decor = $args['hide_decor'];
 ?>
 <section class="section-core section-core section-offer" props="{}">
 	<div class="section-offer__wrapper wrapper">
@@ -28,16 +29,24 @@ $addr_url = $args['addr_url'];
 								<source src="<?php echo $video1['url'] ?>" type="<?php echo $video1['mime_type'] ?>" />
 							</video>
 						</div>
-						<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-left module-photo">
-							<img src="<?php echo IMAGES ?>/section-offer-2.png" alt="photo" loading="lazy" />
-						</picture>
+						<?php if(!$hide_decor): ?>
+							<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-left module-photo">
+								<img src="<?php echo IMAGES ?>/section-offer-2.png" alt="photo" loading="lazy" />
+							</picture>
+						<?php else: ?>
+							<span class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-left"></span>
+						<?php endif; ?>
 					</div>
 				<?php else: ?>
 					<div class="section-offer__decor">
 						<picture class="section-offer__decor-part section-offer__decor-part_main section-offer__decor-part_main-left module-photo"><img src="<?php echo IMAGES ?>/section-offer-1.png" alt="photo" loading="lazy" /></picture>
-						<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-left module-photo">
-							<img src="<?php echo IMAGES ?>/section-offer-2.png" alt="photo" loading="lazy" />
-						</picture>
+						<?php if(!$hide_decor): ?>
+							<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-left module-photo">
+								<img src="<?php echo IMAGES ?>/section-offer-2.png" alt="photo" loading="lazy" />
+							</picture>
+						<?php else: ?>
+							<span class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-left"></span>
+						<?php endif; ?>
 					</div>
 				<?php endif; ?>
 				<?php if($video2): ?>
@@ -47,16 +56,24 @@ $addr_url = $args['addr_url'];
 								<source src="<?php echo $video2['url'] ?>" type="<?php echo $video2['mime_type'] ?>" />
 							</video>
 						</div>
-						<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-right module-photo">
-							<img src="<?php echo IMAGES ?>/section-offer-4.png" alt="photo" loading="lazy" />
-						</picture>
+						<?php if(!$hide_decor): ?>
+							<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-right module-photo">
+								<img src="<?php echo IMAGES ?>/section-offer-4.png" alt="photo" loading="lazy" />
+							</picture>
+						<?php else: ?>
+							<span class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-right"></span>
+						<?php endif; ?>
 					</div>
 				<?php else: ?>
 					<div class="section-offer__decor">
 						<picture class="section-offer__decor-part section-offer__decor-part_main section-offer__decor-part_main-right module-photo"><img src="<?php echo IMAGES ?>/section-offer-3.png" alt="photo" loading="lazy" /></picture>
-						<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-right module-photo">
-							<img src="<?php echo IMAGES ?>/section-offer-4.png" alt="photo" loading="lazy" />
-						</picture>
+						<?php if(!$hide_decor): ?>
+							<picture class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-right module-photo">
+								<img src="<?php echo IMAGES ?>/section-offer-4.png" alt="photo" loading="lazy" />
+							</picture>
+						<?php else: ?>
+							<span class="section-offer__decor-part section-offer__decor-part_absolute section-offer__decor-part_absolute-right"></span>
+						<?php endif; ?>
 					</div>
 				<?php endif; ?>
 			</div>

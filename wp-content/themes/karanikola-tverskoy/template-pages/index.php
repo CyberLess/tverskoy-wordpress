@@ -8,6 +8,7 @@ get_header();
 		'video2' => get_field('hello_second_video'),
 		'addr' => get_field('addr', 'options'),
 		'addr_url' => get_field('addr_url', 'options'),
+		'hide_decor' => get_field('hide_decor')
 	]); ?>
 	<section class="section-core section-core section-about" props="{}">
 		<div class="section-about__wrapper wrapper">
