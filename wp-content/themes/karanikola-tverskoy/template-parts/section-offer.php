@@ -83,8 +83,9 @@ $hide_decor = $args['hide_decor'];
 						Гастрономический <br />
 						кластер в&nbsp;центре Москвы
 					</div>
-					<div class="section-offer__trigger grid-flex grid-flex_justify-center">
-						<svg class="section-offer__trigger-icon module-svg-icon module-svg-icon_icon-arrow" viewBox="0, 0, 10, 14"><use href="#icon-arrow"></use></svg>
+					<div class="section-offer__info">
+						Собственный <br />
+						подземный паркинг
 					</div>
 					<?php if($addr): ?>
 						<div class="section-offer__info">
