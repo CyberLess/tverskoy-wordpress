@@ -11,10 +11,11 @@
 ?>
 
 <a
-	class="<?php echo $isAjax ?> section-products-catalog__item item-product"
+	class="<?php echo $isAjax ?> section-products-catalog__item item-product js-item-product"
 	href="#"
 	data-bs-toggle="modal"
 	data-bs-target="#modal-rent"
+	data-event="hover"
 	<?php if (!empty($floor)): ?>data-floor="<?php echo $floor->name ?>"<?php endif; ?>
 	<?php if (!empty($title)): ?>data-title="<?php echo $title ?>" <?php endif; ?>
 	<?php if (!empty($scheme)): ?>data-scheme="<?php echo $scheme['sizes']['large'] ?>"<?php endif; ?>
